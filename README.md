@@ -271,7 +271,47 @@ Advantages
 ### False Position Method
 
 #### <a name="false-position-theory"></a>Theory
-[Add theory content here]
+Theory
+The False Position method is a bracketing root-finding technique that combines the concepts of the Bisection method and Linear Interpolation.
+Given a continuous function f(x) such that: f(a) ⋅ f(b) < 0 there exists at least one real root in the interval [a, b].
+The root approximation is calculated using the formula:
+c = [a f(b) – b f(a)] / [f(b) – f(a)]
+The interval is then updated based on the sign of f(c), and the process continues until the desired accuracy is achieved.
+Algorithm
+1.	Read the number of test cases.
+2.	For each test case:
+o	Read the degree and coefficients of the polynomial.
+o	Read the initial guesses a, b and error tolerance E.
+o	Evaluate f(a) and f(b).
+3.	If f(a) ⋅ f(b) ≥ 0, terminate (invalid interval).
+4.	Compute: c = [a f(b) – b f(a)] / [f(b) – f(a)]
+5.	Update the interval:
+o	If f(a) ⋅ f(c) < 0, set b = c
+o	Else, set a = c
+6.	Repeat until |f(c)| ≤ E.
+7.	Display the root and number of iterations.
+Implementation Details
+•	The polynomial is evaluated using a coefficient vector.
+•	long double is used for higher precision.
+•	Input and output are handled through files (input.txt, output.txt).
+•	A formatted iteration table displays values of a, b, c, and f(c) at each step.
+Sample Output (Description)
+The program prints:
+•	Iteration number
+•	Current values of a, b, and c
+•	Function value f(c)
+•	Final approximate root
+•	Total number of iterations
+Advantages
+•	Guarantees convergence when the initial bracket is valid.
+•	More accurate than the bisection method due to linear interpolation.
+•	Simple and efficient for polynomial equations.
+Limitations
+•	Convergence can be slow when one endpoint remains fixed.
+•	Requires an initial interval with opposite signs.
+•	Not suitable for functions with multiple roots in the interval.
+
+
 
 #### <a name="false-position-code"></a>Code
 ```cpp
