@@ -523,6 +523,54 @@ Augmented Mstrix:
 #### <a name="lu-decomposition-theory"></a>Theory
 [Add theory content here]
 
+Introduction
+LU Decomposition (also known as LU Factorization) is a numerical method used to solve systems of linear equations, calculate determinants, and invert matrices.
+
+Theory: The fundamental principle of this method is to factorize a square matrix A into the product of two matrices:
+
+L (Lower Triangular Matrix): A matrix where all elements above the main diagonal are zero.
+
+U (Upper Triangular Matrix): A matrix where all elements below the main diagonal are zero.
+
+Mathematically, A = L × U.
+
+Given a system Ax = b, we can substitute A to get (LU)x = b. By introducing an intermediate vector y, the problem is split into two simpler steps:
+
+Ly = b (solved by forward substitution)
+
+Ux = y (solved by back substitution)
+
+Algorithm
+The solution process involves three distinct stages:
+
+Decomposition (Factorization): Decompose matrix A into L and U. A common approach is Doolittle’s Method, where the diagonal elements of L are set to 1.
+
+Compute elements of U (rows).
+
+Compute elements of L (columns) using the remaining values.
+
+Forward Substitution (Solving for y): Solve the lower triangular system Ly = b to find the intermediate vector y.
+
+Since L is lower triangular, calculate y₁ first, then substitute to find y₂, and so on.
+
+Back Substitution (Solving for x): Solve the upper triangular system Ux = y to find the solution vector x.
+
+Since U is upper triangular, calculate xₙ (the last variable) first, then substitute upwards.
+
+Advantages
+Efficiency for Multiple Inputs: Once A is decomposed into L and U, you can solve Ax = b for many different constant vectors b without re-doing the computationally expensive decomposition step.
+
+Determinant Calculation: The determinant of A is simply the product of the diagonal elements of L and U (often just the product of U's diagonal if L has 1s).
+
+Memory Management: The L and U matrices can often be stored in the same memory space as the original matrix A (in-place decomposition), saving memory.
+
+Disadvantages
+Pivoting Required: If a pivot element (diagonal element) becomes zero or very small, the decomposition fails or becomes unstable. Partial pivoting (PA = LU) is often required to handle this.
+
+Square Matrices Only: The standard method is strictly defined for square matrices.
+
+Complexity: For a single system Ax = b, it requires approximately the same number of arithmetic operations (O(n³/3)) as Gauss Elimination, so it offers no speed advantage if the system is solved only once.
+
 #### <a name="lu-decomposition-code"></a>Code
 ```cpp
 // View the code file here:
