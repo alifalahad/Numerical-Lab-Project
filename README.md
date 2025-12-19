@@ -2395,6 +2395,35 @@ Stability: Like all numerical differentiation, it is sensitive to round-off erro
 #### <a name="runge-kutta-theory"></a>Theory
 [Add theory content here]
 
+Introduction
+The Runge-Kutta 4th Order method (often referred to simply as RK4) is the most widely used numerical technique for solving Ordinary Differential Equations (ODEs). It provides a solution to initial value problems of the form dy/dx = f(x, y).
+Theory: The RK4 method calculates a weighted average of four different slopes within the interval. This results in significantly higher accuracy without requiring the calculation of higher-order derivatives.
+The four slopes (k) are:
+•	k₁: Slope at the beginning of the interval.
+•	k₂: Slope at the midpoint (using k₁ to step halfway).
+•	k₃: Slope at the midpoint (using k₂ to correct the estimate).
+•	k₄: Slope at the end of the interval.
+Algorithm
+1.	Define the Problem: Given the function f(x, y), step size h, and initial condition (x₀, y₀).
+2.	Iterate: For each step n, calculate the four intermediate values:
+o	k₁ = h · f(xₙ, yₙ)
+o	k₂ = h · f(xₙ + h/2, yₙ + k₁/2)
+o	k₃ = h · f(xₙ + h/2, yₙ + k₂/2)
+o	k₄ = h · f(xₙ + h, yₙ + k₃)
+3.	Update y: Calculate the next value of y using the weighted average formula:
+yₙ₊₁ = yₙ + (1/6) · (k₁ + 2k₂ + 2k₃ + k₄)
+4.	Update x: xₙ₊₁ = xₙ + h
+5.	Repeat: Continue the process until the desired target x is reached.
+Advantages
+•	High Accuracy: It has a global error of order O(h⁴), making it much more accurate than Euler’s method or the Modified Euler method.
+•	No Higher Derivatives: Unlike Taylor Series methods, it does not require analytically calculating second or third derivatives of the function, which can be difficult or impossible for complex equations.
+•	Stability: It is generally stable for a wide range of functions and step sizes.
+Disadvantages
+•	Computational Cost: It requires four function evaluations per step (calculating k₁, k₂, k₃, and k₄), whereas Euler’s method requires only one. This can be slower for very complex functions.
+•	Complexity: The implementation is slightly more complex than basic linear methods.
+
+
+
 #### <a name="runge-kutta-code"></a>Code
 ```cpp
 // View the code file here: 
