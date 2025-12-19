@@ -7,117 +7,117 @@
 
 - [Solution of Linear Equations](#solution-of-linear-equations)
   - [Gauss Elimination Method](#gauss-elimination-method)
-    - [Theory](#gauss-elimination-theory)
-    - [Code](#gauss-elimination-code)
-    - [Input](#gauss-elimination-input)
-    - [Output](#gauss-elimination-output)
+    - [Theory](#theory)
+    - [Code](#code)
+    - [Input](#input)
+    - [Output](#output)
   - [Gauss Jordan Elimination Method](#gauss-jordan-elimination-method)
-    - [Theory](#gauss-jordan-theory)
-    - [Code](#gauss-jordan-code)
-    - [Input](#gauss-jordan-input)
-    - [Output](#gauss-jordan-output)
+    - [Theory](#theory-1)
+    - [Code](#code-1)
+    - [Input](#input-1)
+    - [Output](#output-1)
   - [LU Decomposition Method](#lu-decomposition-method)
-    - [Theory](#lu-decomposition-theory)
-    - [Code](#lu-decomposition-code)
-    - [Input](#lu-decomposition-input)
-    - [Output](#lu-decomposition-output)
-  - [Matrix Inversion](#matrix-inversion-linear)
-    - [Theory](#matrix-inversion-linear-theory)
-    - [Code](#matrix-inversion-linear-code)
-    - [Input](#matrix-inversion-linear-input)
-    - [Output](#matrix-inversion-linear-output)
+    - [Theory](#theory-2)
+    - [Code](#code-2)
+    - [Input](#input-2)
+    - [Output](#output-2)
+  - [Matrix Inversion](#matrix-inversion)
+    - [Theory](#theory-3)
+    - [Code](#code-3)
+    - [Input](#input-3)
+    - [Output](#output-3)
 
 - [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
   - [Bisection Method](#bisection-method)
-    - [Theory](#bisection-theory)
-    - [Code](#bisection-code)
-    - [Input](#bisection-input)
-    - [Output](#bisection-output)
+    - [Theory](#theory-4)
+    - [Code](#code-4)
+    - [Input](#input-4)
+    - [Output](#output-4)
   - [False Position Method](#false-position-method)
-    - [Theory](#false-position-theory)
-    - [Code](#false-position-code)
-    - [Input](#false-position-input)
-    - [Output](#false-position-output)
+    - [Theory](#theory-5)
+    - [Code](#code-5)
+    - [Input](#input-5)
+    - [Output](#output-5)
   - [Newton Raphson Method](#newton-raphson-method)
-    - [Theory](#newton-raphson-theory)
-    - [Code](#newton-raphson-code)
-    - [Input](#newton-raphson-input)
-    - [Output](#newton-raphson-output)
+    - [Theory](#theory-6)
+    - [Code](#code-6)
+    - [Input](#input-6)
+    - [Output](#output-6)
   - [Secant Method](#secant-method)
-    - [Theory](#secant-theory)
-    - [Code](#secant-code)
-    - [Input](#secant-input)
-    - [Output](#secant-output)
+    - [Theory](#theory-7)
+    - [Code](#code-7)
+    - [Input](#input-7)
+    - [Output](#output-7)
 
 - [Newton Interpolation](#newton-interpolation)
   - [Forward Interpolation](#forward-interpolation)
-    - [Theory](#forward-interpolation-theory)
-    - [Code](#forward-interpolation-code)
-    - [Input](#forward-interpolation-input)
-    - [Output](#forward-interpolation-output)
+    - [Theory](#theory-8)
+    - [Code](#code-8)
+    - [Input](#input-8)
+    - [Output](#output-8)
   - [Backward Interpolation](#backward-interpolation)
-    - [Theory](#backward-interpolation-theory)
-    - [Code](#backward-interpolation-code)
-    - [Input](#backward-interpolation-input)
-    - [Output](#backward-interpolation-output)
+    - [Theory](#theory-9)
+    - [Code](#code-9)
+    - [Input](#input-9)
+    - [Output](#output-9)
   - [Divided Difference](#divided-difference)
-    - [Theory](#divided-difference-theory)
-    - [Code](#divided-difference-code)
-    - [Input](#divided-difference-input)
-    - [Output](#divided-difference-output)
+    - [Theory](#theory-10)
+    - [Code](#code-10)
+    - [Input](#input-10)
+    - [Output](#output-10)
 
 - [Curve Fitting](#curve-fitting)
   - [Linear Regression](#linear-regression)
-    - [Theory](#linear-regression-theory)
-    - [Code](#linear-regression-code)
-    - [Input](#linear-regression-input)
-    - [Output](#linear-regression-output)
+    - [Theory](#theory-11)
+    - [Code](#code-11)
+    - [Input](#input-11)
+    - [Output](#output-11)
   - [Polynomial Regression](#polynomial-regression)
-    - [Theory](#polynomial-regression-theory)
-    - [Code](#polynomial-regression-code)
-    - [Input](#polynomial-regression-input)
-    - [Output](#polynomial-regression-output)
+    - [Theory](#theory-12)
+    - [Code](#code-12)
+    - [Input](#input-12)
+    - [Output](#output-12)
   - [Transcendental Regression](#transcendental-regression)
-    - [Theory](#transcendental-regression-theory)
-    - [Code](#transcendental-regression-code)
-    - [Input](#transcendental-regression-input)
-    - [Output](#transcendental-regression-output)
+    - [Theory](#theory-13)
+    - [Code](#code-13)
+    - [Input](#input-13)
+    - [Output](#output-13)
 
 - [Numerical Integration](#numerical-integration)
   - [Simpson's 1/3 Rule](#simpsons-13-rule)
-    - [Theory](#simpsons-13-theory)
-    - [Code](#simpsons-13-code)
-    - [Input](#simpsons-13-input)
-    - [Output](#simpsons-13-output)
+    - [Theory](#theory-14)
+    - [Code](#code-14)
+    - [Input](#input-14)
+    - [Output](#output-14)
   - [Simpson's 3/8 Rule](#simpsons-38-rule)
-    - [Theory](#simpsons-38-theory)
-    - [Code](#simpsons-38-code)
-    - [Input](#simpsons-38-input)
-    - [Output](#simpsons-38-output)
+    - [Theory](#theory-15)
+    - [Code](#code-15)
+    - [Input](#input-15)
+    - [Output](#output-15)
 
 - [Direct Differentiation](#direct-differentiation)
   - [Forward Differentiation](#forward-differentiation)
-    - [Theory](#forward-differentiation-theory)
-    - [Code](#forward-differentiation-code)
-    - [Input](#forward-differentiation-input)
-    - [Output](#forward-differentiation-output)
+    - [Theory](#theory-16)
+    - [Code](#code-16)
+    - [Input](#input-16)
+    - [Output](#output-16)
   - [Backward Differentiation](#backward-differentiation)
-    - [Theory](#backward-differentiation-theory)
-    - [Code](#backward-differentiation-code)
-    - [Input](#backward-differentiation-input)
-    - [Output](#backward-differentiation-output)
+    - [Theory](#theory-17)
+    - [Code](#code-17)
+    - [Input](#input-17)
+    - [Output](#output-17)
 
 - [Solution of Differential Equations](#solution-of-differential-equations)
   - [Euler Method](#euler-method)
-    - [Theory](#euler-theory)
-    - [Code](#euler-code)
-    - [Input](#euler-input)
-    - [Output](#euler-output)
+    - [Theory](#theory-18)
+    - [Code](#code-18)
+    - [Input](#input-18)
+    - [Output](#output-18)
   - [Runge Kutta Method](#runge-kutta-method)
-    - [Theory](#runge-kutta-theory)
-    - [Code](#runge-kutta-code)
-    - [Input](#runge-kutta-input)
-    - [Output](#runge-kutta-output)
+    - [Theory](#theory-19)
+    - [Code](#code-19)
+    - [Input](#input-19)
+    - [Output](#output-19)
 
 ---
 
@@ -125,39 +125,31 @@
 
 ### Gauss Elimination Method
 
-<a name="gauss-elimination-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="gauss-elimination-code"></a>
 #### Code
 [Gauss_Elimination.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/Gauss_Elimination.cpp)
 
-<a name="gauss-elimination-input"></a>
 #### Input
 [input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/input.txt)
 
-<a name="gauss-elimination-output"></a>
 #### Output
-[output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/output.txt)
+[output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/output. txt)
 
 ---
 
 ### Gauss Jordan Elimination Method
 
-<a name="gauss-jordan-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="gauss-jordan-code"></a>
 #### Code
 [Gauss_Jordan.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/Gauss_Jordan.cpp)
 
-<a name="gauss-jordan-input"></a>
 #### Input
 [input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/input.txt)
 
-<a name="gauss-jordan-output"></a>
 #### Output
 [output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/output.txt)
 
@@ -165,19 +157,15 @@
 
 ### LU Decomposition Method
 
-<a name="lu-decomposition-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="lu-decomposition-code"></a>
 #### Code
 [LU_DECOMPOSITION.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/LU_DECOMPOSITION/LU_DECOMPOSITION.cpp)
 
-<a name="lu-decomposition-input"></a>
 #### Input
 [input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/input.txt)
 
-<a name="lu-decomposition-output"></a>
 #### Output
 [output. txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/output.txt)
 
@@ -185,19 +173,15 @@
 
 ### Matrix Inversion
 
-<a name="matrix-inversion-linear-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="matrix-inversion-linear-code"></a>
 #### Code
 [Matrix_Inversion.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/Matrix_Inversion.cpp)
 
-<a name="matrix-inversion-linear-input"></a>
 #### Input
 [input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/input.txt)
 
-<a name="matrix-inversion-linear-output"></a>
 #### Output
 [output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/output.txt)
 
@@ -207,19 +191,15 @@
 
 ### Bisection Method
 
-<a name="bisection-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="bisection-code"></a>
 #### Code
-[Bisection. cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/Bisection.cpp)
+[Bisection.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/Bisection.cpp)
 
-<a name="bisection-input"></a>
 #### Input
-[input.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/input. txt)
+[input. txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/input.txt)
 
-<a name="bisection-output"></a>
 #### Output
 [output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/output.txt)
 
@@ -227,61 +207,49 @@
 
 ### False Position Method
 
-<a name="false-position-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="false-position-code"></a>
 #### Code
 [False_Position.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/False_Position.cpp)
 
-<a name="false-position-input"></a>
 #### Input
 [input.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/input.txt)
 
-<a name="false-position-output"></a>
 #### Output
-[output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/output.txt)
+[output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/output. txt)
 
 ---
 
 ### Newton Raphson Method
 
-<a name="newton-raphson-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="newton-raphson-code"></a>
 #### Code
 [Newton_Raphson. cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/Newton_Raphson.cpp)
 
-<a name="newton-raphson-input"></a>
 #### Input
 [input_nr.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/input_nr.txt)
 
-<a name="newton-raphson-output"></a>
 #### Output
-[output_nr.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/output_nr.txt)
+[output_nr.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/output_nr. txt)
 
 ---
 
 ### Secant Method
 
-<a name="secant-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="secant-code"></a>
 #### Code
 [Secant.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/SECANT_METHOD/Secant.cpp)
 
-<a name="secant-input"></a>
 #### Input
 [input_sec.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/SECANT_METHOD/input_sec.txt)
 
-<a name="secant-output"></a>
 #### Output
-[output_sec. txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/SECANT_METHOD/output_sec. txt)
+[output_sec.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/SECANT_METHOD/output_sec.txt)
 
 ---
 
@@ -289,19 +257,15 @@
 
 ### Forward Interpolation
 
-<a name="forward-interpolation-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="forward-interpolation-code"></a>
 #### Code
 [newton_forward.cpp](./src/Newton%20interpolation/Forward/newton_forward.cpp)
 
-<a name="forward-interpolation-input"></a>
 #### Input
 [input_fw.txt](./src/Newton%20interpolation/Forward/input_fw.txt)
 
-<a name="forward-interpolation-output"></a>
 #### Output
 [output_fw.txt](./src/Newton%20interpolation/Forward/output_fw.txt)
 
@@ -309,19 +273,15 @@
 
 ### Backward Interpolation
 
-<a name="backward-interpolation-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="backward-interpolation-code"></a>
 #### Code
-[newton_backward.cpp](./src/Newton%20interpolation/Backward/newton_backward. cpp)
+[newton_backward.cpp](./src/Newton%20interpolation/Backward/newton_backward.cpp)
 
-<a name="backward-interpolation-input"></a>
 #### Input
 [input_bw.txt](./src/Newton%20interpolation/Backward/input_bw.txt)
 
-<a name="backward-interpolation-output"></a>
 #### Output
 [output_bw.txt](./src/Newton%20interpolation/Backward/output_bw.txt)
 
@@ -329,19 +289,15 @@
 
 ### Divided Difference
 
-<a name="divided-difference-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="divided-difference-code"></a>
 #### Code
 [div. cpp](./src/Newton%20interpolation/divided%20difference/div.cpp)
 
-<a name="divided-difference-input"></a>
 #### Input
-[input_div.txt](./src/Newton%20interpolation/divided%20difference/input_div.txt)
+[input_div. txt](./src/Newton%20interpolation/divided%20difference/input_div.txt)
 
-<a name="divided-difference-output"></a>
 #### Output
 [output_div.txt](./src/Newton%20interpolation/divided%20difference/output_div.txt)
 
@@ -351,59 +307,47 @@
 
 ### Linear Regression
 
-<a name="linear-regression-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="linear-regression-code"></a>
 #### Code
 [linear. cpp](./src/Curve%20Fitting/regression/Linear/linear.cpp)
 
-<a name="linear-regression-input"></a>
 #### Input
 [input_lin.txt](./src/Curve%20Fitting/regression/Linear/input_lin.txt)
 
-<a name="linear-regression-output"></a>
 #### Output
-[output_lin.txt](./src/Curve%20Fitting/regression/Linear/output_lin.txt)
+[output_lin. txt](./src/Curve%20Fitting/regression/Linear/output_lin.txt)
 
 ---
 
 ### Polynomial Regression
 
-<a name="polynomial-regression-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="polynomial-regression-code"></a>
 #### Code
 [polynomial.cpp](./src/Curve%20Fitting/regression/polynomial/polynomial.cpp)
 
-<a name="polynomial-regression-input"></a>
 #### Input
 [input_pol.txt](./src/Curve%20Fitting/regression/polynomial/input_pol.txt)
 
-<a name="polynomial-regression-output"></a>
 #### Output
-[output_pol.txt](./src/Curve%20Fitting/regression/polynomial/output_pol.txt)
+[output_pol. txt](./src/Curve%20Fitting/regression/polynomial/output_pol.txt)
 
 ---
 
 ### Transcendental Regression
 
-<a name="transcendental-regression-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="transcendental-regression-code"></a>
 #### Code
 [regression_transcendental.cpp](./src/Curve%20Fitting/regression/trascendental/regression_transcendental.cpp)
 
-<a name="transcendental-regression-input"></a>
 #### Input
-[input_trans.txt](./src/Curve%20Fitting/regression/trascendental/input_trans. txt)
+[input_trans.txt](./src/Curve%20Fitting/regression/trascendental/input_trans.txt)
 
-<a name="transcendental-regression-output"></a>
 #### Output
 [output_trans.txt](./src/Curve%20Fitting/regression/trascendental/output_trans.txt)
 
@@ -413,19 +357,15 @@
 
 ### Simpson's 1/3 Rule
 
-<a name="simpsons-13-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="simpsons-13-code"></a>
 #### Code
-[one_third.cpp](./src/NUMERICAL_INTEGRATION/ONE_THIRD_RULE/one%20_third.cpp)
+[one_third. cpp](./src/NUMERICAL_INTEGRATION/ONE_THIRD_RULE/one%20_third.cpp)
 
-<a name="simpsons-13-input"></a>
 #### Input
 [input1_3.txt](./src/NUMERICAL_INTEGRATION/ONE_THIRD_RULE/input1_3.txt)
 
-<a name="simpsons-13-output"></a>
 #### Output
 [output1_3.txt](./src/NUMERICAL_INTEGRATION/ONE_THIRD_RULE/output1_3.txt)
 
@@ -433,19 +373,15 @@
 
 ### Simpson's 3/8 Rule
 
-<a name="simpsons-38-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="simpsons-38-code"></a>
 #### Code
 [newton3_8.cpp](./src/NUMERICAL_INTEGRATION/THREE_EIGHT_RULE/newton3_8.cpp)
 
-<a name="simpsons-38-input"></a>
 #### Input
 [input_3_8.txt](./src/NUMERICAL_INTEGRATION/THREE_EIGHT_RULE/input_3_8.txt)
 
-<a name="simpsons-38-output"></a>
 #### Output
 [output_3_8.txt](./src/NUMERICAL_INTEGRATION/THREE_EIGHT_RULE/output_3_8.txt)
 
@@ -455,19 +391,15 @@
 
 ### Forward Differentiation
 
-<a name="forward-differentiation-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="forward-differentiation-code"></a>
 #### Code
-[Differentiation_FI.cpp](./src/Direct%20Differentiation/forward/Differentiation_FI.cpp)
+[Differentiation_FI.cpp](./src/Direct%20Differentiation/forward/Differentiation_FI. cpp)
 
-<a name="forward-differentiation-input"></a>
 #### Input
-[input_diff_fwd.txt](./src/Direct%20Differentiation/forward/input_diff_fwd. txt)
+[input_diff_fwd.txt](./src/Direct%20Differentiation/forward/input_diff_fwd.txt)
 
-<a name="forward-differentiation-output"></a>
 #### Output
 [output_diff_fwd.txt](./src/Direct%20Differentiation/forward/output_diff_fwd.txt)
 
@@ -475,19 +407,15 @@
 
 ### Backward Differentiation
 
-<a name="backward-differentiation-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="backward-differentiation-code"></a>
 #### Code
 [differentiation_BI.cpp](./src/Direct%20Differentiation/backward/differentiation_BI.cpp)
 
-<a name="backward-differentiation-input"></a>
 #### Input
 [input_diff. txt](./src/Direct%20Differentiation/backward/input_diff.txt)
 
-<a name="backward-differentiation-output"></a>
 #### Output
 [output_diff.txt](./src/Direct%20Differentiation/backward/output_diff.txt)
 
@@ -497,19 +425,15 @@
 
 ### Euler Method
 
-<a name="euler-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="euler-code"></a>
 #### Code
-[Euler. cpp](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/Euler.cpp)
+[Euler.cpp](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/Euler.cpp)
 
-<a name="euler-input"></a>
 #### Input
 [input. txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/input. txt)
 
-<a name="euler-output"></a>
 #### Output
 [output.txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/output.txt)
 
@@ -517,19 +441,15 @@
 
 ### Runge Kutta Method
 
-<a name="runge-kutta-theory"></a>
 #### Theory
 [Add theory content here]
 
-<a name="runge-kutta-code"></a>
 #### Code
 [RungeKutta4th.cpp](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/RungeKutta4th.cpp)
 
-<a name="runge-kutta-input"></a>
 #### Input
-[input.txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/input.txt)
+[input. txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/input.txt)
 
-<a name="runge-kutta-output"></a>
 #### Output
 [output.txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/output.txt)
 
