@@ -1761,6 +1761,25 @@ Sensitivity: Like all polynomial interpolation, it can be sensitive to errors in
 #### <a name="linear-regression-theory"></a>Theory
 [Add theory content here]
 
+Introduction
+Linear Regression is a statistical method used to model the relationship between a dependent variable (y) and an independent variable (x) by fitting a straight line to the observed data.
+Theory: The goal is to find the equation of a straight line y = a + bx that best fits the data points. The method of Least Squares is used, which minimizes the sum of the squares of the vertical differences (residuals) between the observed data points and the fitted line.
+Algorithm
+1.	Calculate Sums: Compute the necessary summations from the data set of n points:
+o	Σx, Σy, Σxy, Σx²
+2.	Solve Normal Equations: The constants a (intercept) and b (slope) are found by solving the system of linear equations:
+o	Σy = n·a + b·Σx
+o	Σxy = a·Σx + b·Σx²
+3.	Compute Coefficients: Alternatively, calculate a and b directly using the formulas derived from the system above.
+4.	Formulate Equation: Substitute a and b into y = a + bx to get the final regression line.
+Advantages
+•	Simplicity: It is the simplest form of regression and easy to interpret.
+•	Best Fit: Mathematically guarantees the minimum possible error (in the squared sense) for linear relationships.
+Disadvantages
+•	Linearity Assumption: It assumes a linear relationship; if the data is curved, this method yields poor results.
+•	Sensitive to Outliers: A single extreme value (outlier) can significantly skew the line.
+
+
 #### <a name="linear-regression-code"></a>Code
 ```cpp
 // View the code file here:
@@ -1838,6 +1857,28 @@ Regression Line: y = 1 + 2x
 
 #### <a name="polynomial-regression-theory"></a>Theory
 [Add theory content here]
+
+Introduction
+Polynomial Regression is an extension of linear regression used to model relationships where the data points follow a curve rather than a straight line.
+Theory: It fits a polynomial equation of degree m to the data: y = a₀ + a₁x + a₂x² + ... + aₘxᵐ
+Like linear regression, it uses the Least Squares method to minimize the error. For a 2nd-degree (parabolic) curve, the system involves solving for three unknowns (a₀, a₁, a₂).
+Algorithm
+1.	Choose Degree: Decide the degree m of the polynomial (e.g., m=2 for a parabola).
+2.	Calculate Sums: Compute summations for higher powers of x:
+o	Σx, Σx², Σx³, Σx⁴, ..., Σx²ᵐ
+o	Σy, Σxy, Σx²y, ...
+3.	Form Matrix System: Construct the system of linear equations (Normal Equations) in matrix form. For a 2nd degree polynomial:
+o	n·a₀ + a₁Σx + a₂Σx² = Σy
+o	a₀Σx + a₁Σx² + a₂Σx³ = Σxy
+o	a₀Σx² + a₁Σx³ + a₂Σx⁴ = Σx²y
+4.	Solve: Use Gaussian Elimination or LU Decomposition to solve for coefficients a₀, a₁, a₂, ...
+Advantages
+•	Flexibility: Can model complex, non-linear relationships and curves.
+•	Better Fit: Provides a much lower error than linear regression for curved data.
+Disadvantages
+•	Overfitting: Using a polynomial of too high a degree can cause the curve to oscillate wildly between points, fitting the "noise" rather than the trend.
+•	Complexity: Requires solving a larger system of equations.
+
 
 #### <a name="polynomial-regression-code"></a>Code
 ```cpp
@@ -1979,6 +2020,29 @@ y = 1.0000 + 1.0000x^1
 
 #### <a name="transcendental-regression-theory"></a>Theory
 [Add theory content here]
+Introduction
+Transcendental regression involves fitting non-polynomial functions—such as exponential, logarithmic, or power functions—to a dataset.
+Theory: These equations are non-linear in their parameters. To solve them using standard regression techniques, the equation is usually linearized using logarithms.
+•	Exponential Model: y = ae^(bx)
+•	Power Model: y = ax^b
+•	Growth Model: y = a + b ln(x)
+Algorithm (Linearization Method)
+1.	Identify Model: Choose the form that best represents the data (e.g., Exponential: y = ae^(bx)).
+2.	Linearize the Equation: Apply logarithms to transform the non-linear equation into a linear form (Y = A + BX).
+o	Example (Exponential): ln(y) = ln(a) + bx
+o	Let Y = ln(y), A = ln(a), B = b, and X = x.
+3.	Apply Linear Regression: Perform standard linear regression on the transformed data (X, Y) to find A and B.
+4.	Transform Back: Convert A and B back to the original parameters:
+o	a = e^A
+o	b = B
+Advantages
+•	Real-world Modeling: Many natural phenomena (population growth, radioactive decay, cooling rates) follow transcendental laws, not polynomial ones.
+•	Simplicity: Linearization allows solving complex curves using simple linear regression tools.
+Disadvantages
+•	Data Restrictions: Logarithms cannot be taken of negative numbers or zero; data must be positive.
+•	Distorted Error: Minimizing the error of the transformed (log) data is not mathematically identical to minimizing the error of the original data, though it is usually close enough.
+
+
 
 #### <a name="transcendental-regression-code"></a>Code
 ```cpp
