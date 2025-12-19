@@ -2285,6 +2285,36 @@ The integral value is: 23.250000
 #### <a name="forward-differentiation-theory"></a>Theory
 [Add theory content here]
 
+Introduction
+
+This method is used to compute the derivative (rate of change) of a function given in a tabular form. It is specifically applicable when the value of x at which the derivative is required is near the beginning of the table and the data is equally spaced.
+
+Theory: Instead of differentiating the function directly (which may be unknown), we approximate the function using Newton’s Forward Difference Interpolation formula and then differentiate that polynomial with respect to x.
+
+By applying the chain rule: dy/dx = (dy/du) × (du/dx) Since u = (x – x₀) / h, we know that du/dx = 1/h.
+
+Algorithm
+
+Construct Table: Create the forward difference table up to the required order.
+
+Calculate u: Find u = (x – x₀) / h.
+
+Apply Formula (General): First Derivative: dy/dx = (1/h) [ Δy₀ + ((2u – 1)/2) Δ²y₀ + ((3u² – 6u + 2)/6) Δ³y₀ + ... ]
+
+Simplified Formula (at x = x₀): If calculating exactly at the starting point (u = 0), the formula simplifies to: dy/dx = (1/h) [ Δy₀ – (1/2)Δ²y₀ + (1/3)Δ³y₀ – (1/4)Δ⁴y₀ + ... ]
+
+Advantages
+
+No Analytical Function Needed: Can find the derivative purely from data points.
+
+Simple Calculation: Very efficient for finding derivatives at tabular points near the start.
+
+Disadvantages
+
+Error Amplification: Differentiation is an "error-magnifying" process; small errors in the data (noise) can lead to large errors in the derivative.
+
+Restriction: Strictly requires equally spaced intervals.
+
 #### <a name="forward-differentiation-code"></a>Code
 ```cpp
 // View the code file here:  
@@ -2309,6 +2339,34 @@ The integral value is: 23.250000
 
 #### <a name="backward-differentiation-theory"></a>Theory
 [Add theory content here]
+
+Introduction
+
+This method is the counterpart to the forward method and is used to compute the derivative when the point of interest lies near the end of the table.
+
+Theory: We differentiate Newton’s Backward Difference Interpolation formula. Here, u = (x – xₙ) / h, so du/dx = 1/h.
+
+Algorithm
+
+Construct Table: Create the backward difference table.
+
+Calculate u: Find u = (x – xₙ) / h.
+
+Apply Formula (General): First Derivative: dy/dx = (1/h) [ ∇yₙ + ((2u + 1)/2) ∇²yₙ + ((3u² + 6u + 2)/6) ∇³yₙ + ... ]
+
+Simplified Formula (at x = xₙ): If calculating exactly at the end point (u = 0), the formula simplifies to: dy/dx = (1/h) [ ∇yₙ + (1/2)∇²yₙ + (1/3)∇³yₙ + (1/4)∇⁴yₙ + ... ]
+
+Advantages
+
+End-Point Accuracy: Best suited for analyzing rates of change for the most recent data (bottom of the table).
+
+Consistent: Uses the same backward difference table constructed for interpolation.
+
+Disadvantages
+
+Truncation Error: Higher-order differences are often neglected, which can reduce accuracy if the step size h is not small enough.
+
+Stability: Like all numerical differentiation, it is sensitive to round-off errors.
 
 #### <a name="backward-differentiation-code"></a>Code
 ```cpp
