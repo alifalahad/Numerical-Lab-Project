@@ -108,11 +108,6 @@
     - [Output](#backward-differentiation-output)
 
 - [Solution of Differential Equations](#solution-of-differential-equations)
-  - [Euler Method](#euler-method)
-    - [Theory](#euler-theory)
-    - [Code](#euler-code)
-    - [Input](#euler-input)
-    - [Output](#euler-output)
   - [Runge Kutta Method](#runge-kutta-method)
     - [Theory](#runge-kutta-theory)
     - [Code](#runge-kutta-code)
@@ -130,15 +125,15 @@
 
 #### <a name="gauss-elimination-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
-[Open Gauss_Elimination. cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/Gauss_Elimination.cpp)
+[Open Gauss_Elimination.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/Gauss_Elimination.cpp)
 
 #### <a name="gauss-elimination-input"></a>Input
 ```
 [Add input format/example here]
 ```
-[Open input. txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/input.txt)
+[Open input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/input. txt)
 
 #### <a name="gauss-elimination-output"></a>Output
 ```
@@ -155,7 +150,7 @@
 
 #### <a name="gauss-jordan-code"></a>Code
 ```cpp
-// View the code file here:
+// View the code file here: 
 ```
 [Open Gauss_Jordan.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/Gauss_Jordan.cpp)
 
@@ -169,7 +164,7 @@
 ```
 [Add output format/example here]
 ```
-[Open output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/output.txt)
+[Open output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/output. txt)
 
 ---
 
@@ -180,7 +175,7 @@
 
 #### <a name="lu-decomposition-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
 [Open LU_DECOMPOSITION.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/LU_DECOMPOSITION/LU_DECOMPOSITION.cpp)
 
@@ -188,13 +183,13 @@
 ```
 [Add input format/example here]
 ```
-[Open input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/input.txt)
+[Open input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/input. txt)
 
 #### <a name="lu-decomposition-output"></a>Output
 ```
 [Add output format/example here]
 ```
-[Open output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/output.txt)
+[Open output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/output. txt)
 
 ---
 
@@ -205,7 +200,7 @@
 
 #### <a name="matrix-inversion-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
 [Open Matrix_Inversion.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/Matrix_Inversion. cpp)
 
@@ -257,21 +252,21 @@
 
 #### <a name="false-position-code"></a>Code
 ```cpp
-// View the code file here:
+// View the code file here: 
 ```
-[Open False_Position.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/False_Position.cpp)
+[Open False_Position.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/False_Position. cpp)
 
 #### <a name="false-position-input"></a>Input
 ```
 [Add input format/example here]
 ```
-[Open input.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/input.txt)
+[Open input.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/input. txt)
 
 #### <a name="false-position-output"></a>Output
 ```
 [Add output format/example here]
 ```
-[Open output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/output.txt)
+[Open output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/output. txt)
 
 ---
 
@@ -284,7 +279,7 @@
 ```cpp
 // View the code file here:
 ```
-[Open Newton_Raphson.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/Newton_Raphson.cpp)
+[Open Newton_Raphson. cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/Newton_Raphson.cpp)
 
 #### <a name="newton-raphson-input"></a>Input
 ```
@@ -334,7 +329,7 @@
 
 #### <a name="forward-interpolation-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
 [Open newton_forward.cpp](./src/Newton%20interpolation/Forward/newton_forward.cpp)
 
@@ -359,9 +354,9 @@
 
 #### <a name="backward-interpolation-code"></a>Code
 ```cpp
-// View the code file here:
+// View the code file here: 
 ```
-[Open newton_backward.cpp](./src/Newton%20interpolation/Backward/newton_backward. cpp)
+[Open newton_backward.cpp](./src/Newton%20interpolation/Backward/newton_backward.cpp)
 
 #### <a name="backward-interpolation-input"></a>Input
 ```
@@ -413,7 +408,7 @@
 ```cpp
 // View the code file here:
 ```
-[Open linear. cpp](./src/Curve%20Fitting/regression/Linear/linear.cpp)
+[Open linear.cpp](./src/Curve%20Fitting/regression/Linear/linear.cpp)
 
 #### <a name="linear-regression-input"></a>Input
 ```
@@ -436,7 +431,7 @@
 
 #### <a name="polynomial-regression-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
 [Open polynomial.cpp](./src/Curve%20Fitting/regression/polynomial/polynomial.cpp)
 
@@ -488,7 +483,7 @@
 
 #### <a name="simpsons-13-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
 [Open one_third.cpp](./src/NUMERICAL_INTEGRATION/ONE_THIRD_RULE/one%20_third.cpp)
 
@@ -513,7 +508,7 @@
 
 #### <a name="simpsons-38-code"></a>Code
 ```cpp
-// View the code file here:
+// View the code file here: 
 ```
 [Open newton3_8.cpp](./src/NUMERICAL_INTEGRATION/THREE_EIGHT_RULE/newton3_8.cpp)
 
@@ -540,7 +535,7 @@
 
 #### <a name="forward-differentiation-code"></a>Code
 ```cpp
-// View the code file here:
+// View the code file here: 
 ```
 [Open Differentiation_FI.cpp](./src/Direct%20Differentiation/forward/Differentiation_FI.cpp)
 
@@ -548,13 +543,13 @@
 ```
 [Add input format/example here]
 ```
-[Open input_diff_fwd.txt](./src/Direct%20Differentiation/forward/input_diff_fwd.txt)
+[Open input_diff_fwd. txt](./src/Direct%20Differentiation/forward/input_diff_fwd.txt)
 
 #### <a name="forward-differentiation-output"></a>Output
 ```
 [Add output format/example here]
 ```
-[Open output_diff_fwd. txt](./src/Direct%20Differentiation/forward/output_diff_fwd.txt)
+[Open output_diff_fwd.txt](./src/Direct%20Differentiation/forward/output_diff_fwd.txt)
 
 ---
 
@@ -565,7 +560,7 @@
 
 #### <a name="backward-differentiation-code"></a>Code
 ```cpp
-// View the code file here:
+// View the code file here: 
 ```
 [Open differentiation_BI.cpp](./src/Direct%20Differentiation/backward/differentiation_BI.cpp)
 
@@ -585,31 +580,6 @@
 
 ## Solution of Differential Equations
 
-### Euler Method
-
-#### <a name="euler-theory"></a>Theory
-[Add theory content here]
-
-#### <a name="euler-code"></a>Code
-```cpp
-// View the code file here:
-```
-[Open Euler.cpp](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/Euler.cpp)
-
-#### <a name="euler-input"></a>Input
-```
-[Add input format/example here]
-```
-[Open input. txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/input. txt)
-
-#### <a name="euler-output"></a>Output
-```
-[Add output format/example here]
-```
-[Open output.txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/output.txt)
-
----
-
 ### Runge Kutta Method
 
 #### <a name="runge-kutta-theory"></a>Theory
@@ -617,7 +587,7 @@
 
 #### <a name="runge-kutta-code"></a>Code
 ```cpp
-// View the code file here:
+// View the code file here: 
 ```
 [Open RungeKutta4th.cpp](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/RungeKutta4th.cpp)
 
@@ -625,7 +595,7 @@
 ```
 [Add input format/example here]
 ```
-[Open input.txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/input.txt)
+[Open input. txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/input.txt)
 
 #### <a name="runge-kutta-output"></a>Output
 ```
