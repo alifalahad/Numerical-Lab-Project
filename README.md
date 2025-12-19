@@ -6,13 +6,38 @@
 # Table of Contents
 
 - [Solution of Linear Equations](#solution-of-linear-equations)
+  - [Gauss Elimination Method](#gauss-elimination-method)
+    - [Theory](#gauss-elimination-theory)
+    - [Code](#gauss-elimination-code)
+    - [Input](#gauss-elimination-input)
+    - [Output](#gauss-elimination-output)
+  - [Gauss Jordan Elimination Method](#gauss-jordan-elimination-method)
+    - [Theory](#gauss-jordan-theory)
+    - [Code](#gauss-jordan-code)
+    - [Input](#gauss-jordan-input)
+    - [Output](#gauss-jordan-output)
   - [LU Decomposition Method](#lu-decomposition-method)
     - [Theory](#lu-decomposition-theory)
     - [Code](#lu-decomposition-code)
     - [Input](#lu-decomposition-input)
     - [Output](#lu-decomposition-output)
+  - [Matrix Inversion](#matrix-inversion-linear)
+    - [Theory](#matrix-inversion-linear-theory)
+    - [Code](#matrix-inversion-linear-code)
+    - [Input](#matrix-inversion-linear-input)
+    - [Output](#matrix-inversion-linear-output)
 
 - [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
+  - [Bisection Method](#bisection-method)
+    - [Theory](#bisection-theory)
+    - [Code](#bisection-code)
+    - [Input](#bisection-input)
+    - [Output](#bisection-output)
+  - [False Position Method](#false-position-method)
+    - [Theory](#false-position-theory)
+    - [Code](#false-position-code)
+    - [Input](#false-position-input)
+    - [Output](#false-position-output)
   - [Newton Raphson Method](#newton-raphson-method)
     - [Theory](#newton-raphson-theory)
     - [Code](#newton-raphson-code)
@@ -23,16 +48,6 @@
     - [Code](#secant-code)
     - [Input](#secant-input)
     - [Output](#secant-output)
-  - [False Position Method](#false-position-method)
-    - [Theory](#false-position-theory)
-    - [Code](#false-position-code)
-    - [Input](#false-position-input)
-    - [Output](#false-position-output)
-  - [Runge Kutta Method](#runge-kutta-method)
-    - [Theory](#runge-kutta-theory)
-    - [Code](#runge-kutta-code)
-    - [Input](#runge-kutta-input)
-    - [Output](#runge-kutta-output)
 
 - [Newton Interpolation](#newton-interpolation)
   - [Forward Interpolation](#forward-interpolation)
@@ -93,15 +108,60 @@
     - [Output](#backward-differentiation-output)
 
 - [Solution of Differential Equations](#solution-of-differential-equations)
-  - [Matrix Inversion](#matrix-inversion)
-    - [Theory](#matrix-inversion-theory)
-    - [Code](#matrix-inversion-code)
-    - [Input](#matrix-inversion-input)
-    - [Output](#matrix-inversion-output)
+  - [Euler Method](#euler-method)
+    - [Theory](#euler-theory)
+    - [Code](#euler-code)
+    - [Input](#euler-input)
+    - [Output](#euler-output)
+  - [Runge Kutta Method](#runge-kutta-method)
+    - [Theory](#runge-kutta-theory)
+    - [Code](#runge-kutta-code)
+    - [Input](#runge-kutta-input)
+    - [Output](#runge-kutta-output)
 
 ---
 
 ## Solution of Linear Equations
+
+### Gauss Elimination Method
+
+<a name="gauss-elimination-theory"></a>
+#### Theory
+[Add theory content here]
+
+<a name="gauss-elimination-code"></a>
+#### Code
+[Gauss_Elimination.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/Gauss_Elimination.cpp)
+
+<a name="gauss-elimination-input"></a>
+#### Input
+[input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/input.txt)
+
+<a name="gauss-elimination-output"></a>
+#### Output
+[output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/output.txt)
+
+---
+
+### Gauss Jordan Elimination Method
+
+<a name="gauss-jordan-theory"></a>
+#### Theory
+[Add theory content here]
+
+<a name="gauss-jordan-code"></a>
+#### Code
+[Gauss_Jordan.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/Gauss_Jordan.cpp)
+
+<a name="gauss-jordan-input"></a>
+#### Input
+[input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/input.txt)
+
+<a name="gauss-jordan-output"></a>
+#### Output
+[output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/output.txt)
+
+---
 
 ### LU Decomposition Method
 
@@ -115,15 +175,75 @@
 
 <a name="lu-decomposition-input"></a>
 #### Input
-[input. txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/input.txt)
+[input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/input.txt)
 
 <a name="lu-decomposition-output"></a>
 #### Output
-[output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/output.txt)
+[output. txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/output.txt)
+
+---
+
+### Matrix Inversion
+
+<a name="matrix-inversion-linear-theory"></a>
+#### Theory
+[Add theory content here]
+
+<a name="matrix-inversion-linear-code"></a>
+#### Code
+[Matrix_Inversion.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/Matrix_Inversion.cpp)
+
+<a name="matrix-inversion-linear-input"></a>
+#### Input
+[input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/input.txt)
+
+<a name="matrix-inversion-linear-output"></a>
+#### Output
+[output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/output.txt)
 
 ---
 
 ## Solution of Non-Linear Equations
+
+### Bisection Method
+
+<a name="bisection-theory"></a>
+#### Theory
+[Add theory content here]
+
+<a name="bisection-code"></a>
+#### Code
+[Bisection. cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/Bisection.cpp)
+
+<a name="bisection-input"></a>
+#### Input
+[input.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/input. txt)
+
+<a name="bisection-output"></a>
+#### Output
+[output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/output.txt)
+
+---
+
+### False Position Method
+
+<a name="false-position-theory"></a>
+#### Theory
+[Add theory content here]
+
+<a name="false-position-code"></a>
+#### Code
+[False_Position.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/False_Position.cpp)
+
+<a name="false-position-input"></a>
+#### Input
+[input.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/input.txt)
+
+<a name="false-position-output"></a>
+#### Output
+[output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/output.txt)
+
+---
 
 ### Newton Raphson Method
 
@@ -133,7 +253,7 @@
 
 <a name="newton-raphson-code"></a>
 #### Code
-[Newton_Raphson.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/Newton_Raphson. cpp)
+[Newton_Raphson. cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/Newton_Raphson.cpp)
 
 <a name="newton-raphson-input"></a>
 #### Input
@@ -161,47 +281,7 @@
 
 <a name="secant-output"></a>
 #### Output
-[output_sec.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/SECANT_METHOD/output_sec.txt)
-
----
-
-### False Position Method
-
-<a name="false-position-theory"></a>
-#### Theory
-[Add theory content here]
-
-<a name="false-position-code"></a>
-#### Code
-[Add code link here]
-
-<a name="false-position-input"></a>
-#### Input
-[input. txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/input.txt)
-
-<a name="false-position-output"></a>
-#### Output
-[Add output link here]
-
----
-
-### Runge Kutta Method
-
-<a name="runge-kutta-theory"></a>
-#### Theory
-[Add theory content here]
-
-<a name="runge-kutta-code"></a>
-#### Code
-[RungeKutta4th.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Runge%20Kutta/RungeKutta4th.cpp)
-
-<a name="runge-kutta-input"></a>
-#### Input
-[input. txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Runge%20Kutta/input.txt)
-
-<a name="runge-kutta-output"></a>
-#### Output
-[output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Runge%20Kutta/output.txt)
+[output_sec. txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/SECANT_METHOD/output_sec. txt)
 
 ---
 
@@ -365,4 +445,98 @@
 #### Input
 [input_3_8.txt](./src/NUMERICAL_INTEGRATION/THREE_EIGHT_RULE/input_3_8.txt)
 
-<a name="simpsons-
+<a name="simpsons-38-output"></a>
+#### Output
+[output_3_8.txt](./src/NUMERICAL_INTEGRATION/THREE_EIGHT_RULE/output_3_8.txt)
+
+---
+
+## Direct Differentiation
+
+### Forward Differentiation
+
+<a name="forward-differentiation-theory"></a>
+#### Theory
+[Add theory content here]
+
+<a name="forward-differentiation-code"></a>
+#### Code
+[Differentiation_FI.cpp](./src/Direct%20Differentiation/forward/Differentiation_FI.cpp)
+
+<a name="forward-differentiation-input"></a>
+#### Input
+[input_diff_fwd.txt](./src/Direct%20Differentiation/forward/input_diff_fwd. txt)
+
+<a name="forward-differentiation-output"></a>
+#### Output
+[output_diff_fwd.txt](./src/Direct%20Differentiation/forward/output_diff_fwd.txt)
+
+---
+
+### Backward Differentiation
+
+<a name="backward-differentiation-theory"></a>
+#### Theory
+[Add theory content here]
+
+<a name="backward-differentiation-code"></a>
+#### Code
+[differentiation_BI.cpp](./src/Direct%20Differentiation/backward/differentiation_BI.cpp)
+
+<a name="backward-differentiation-input"></a>
+#### Input
+[input_diff. txt](./src/Direct%20Differentiation/backward/input_diff.txt)
+
+<a name="backward-differentiation-output"></a>
+#### Output
+[output_diff.txt](./src/Direct%20Differentiation/backward/output_diff.txt)
+
+---
+
+## Solution of Differential Equations
+
+### Euler Method
+
+<a name="euler-theory"></a>
+#### Theory
+[Add theory content here]
+
+<a name="euler-code"></a>
+#### Code
+[Euler. cpp](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/Euler.cpp)
+
+<a name="euler-input"></a>
+#### Input
+[input. txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/input. txt)
+
+<a name="euler-output"></a>
+#### Output
+[output.txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/output.txt)
+
+---
+
+### Runge Kutta Method
+
+<a name="runge-kutta-theory"></a>
+#### Theory
+[Add theory content here]
+
+<a name="runge-kutta-code"></a>
+#### Code
+[RungeKutta4th.cpp](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/RungeKutta4th.cpp)
+
+<a name="runge-kutta-input"></a>
+#### Input
+[input.txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/input.txt)
+
+<a name="runge-kutta-output"></a>
+#### Output
+[output.txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/output.txt)
+
+---
+
+## Contributing
+This is a course project for CSE 2208. Feel free to explore the implementations and learn from the numerical methods.
+
+## License
+Educational purposes only.
