@@ -14,7 +14,7 @@
   - [Gauss Jordan Elimination Method](#gauss-jordan-elimination-method)
     - [Theory](#theory-1)
     - [Code](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/Gauss_Jordan.cpp)
-    - [Input](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/input.txt)
+    - [Input](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/input. txt)
     - [Output](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/output.txt)
   - [LU Decomposition Method](#lu-decomposition-method)
     - [Theory](#theory-2)
@@ -112,7 +112,7 @@
     - [Theory](#theory-18)
     - [Code](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/Euler.cpp)
     - [Input](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/input.txt)
-    - [Output](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/output.txt)
+    - [Output](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/EULER/output. txt)
   - [Runge Kutta Method](#runge-kutta-method)
     - [Theory](#theory-19)
     - [Code](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/RungeKutta4th.cpp)
@@ -276,7 +276,7 @@
 ---
 
 ## Contributing
-This is a course project for CSE 2208. Feel free to explore the implementations and learn from the numerical methods.
+This is a course project for CSE 2208. Feel free to explore the implementations and learn from the numerical methods. 
 
 ## License
-Educational purposes only.
+Educational purposes only. 
