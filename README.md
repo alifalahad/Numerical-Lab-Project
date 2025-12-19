@@ -122,6 +122,32 @@
 
 #### <a name="gauss-elimination-theory"></a>Theory
 [Add theory content here]
+Introduction
+The Gauss Elimination method is a direct numerical technique used to solve systems of linear equations of the form Ax = b.
+Theory: The method is theoretically based on the concept of row equivalence. It relies on the principle that applying elementary row operations (such as swapping rows, multiplying a row by a non-zero constant, or adding a multiple of one row to another) preserves the solution set of the system. By systematically applying these operations, the method transforms the dense coefficient matrix A into an upper triangular matrix (row-echelon form). Once in this simplified form, the unknowns can be solved sequentially without complex matrix inversion.
+Algorithm
+The process consists of two main stages: Forward Elimination and Back Substitution.
+Stage 1: Forward Elimination
+1.	Form the Augmented Matrix: Combine the coefficient matrix and the constant vector into a single matrix [A | b].
+2.	Pivot Selection: Start with the first row. The first element is the "pivot."
+3.	Eliminate Entries Below Pivot: Use row operations to create zeros in the column below the current pivot.
+o	Formula: Row_i = Row_i – (factor) × Pivot_Row
+o	Factor: (Element to eliminate) / (Pivot element)
+4.	Iterate: Move to the next diagonal element (next pivot) and repeat the process until the matrix is in upper triangular form (all elements below the main diagonal are zero).
+Stage 2: Back Substitution
+1.	Solve for the Last Variable: The last row now contains an equation with only one variable. Solve for it directly.
+2.	Substitute Upwards: Substitute the known value into the row above it to solve for the next variable.
+3.	Repeat: Continue this process moving upwards until all variables (x₁, x₂, ..., xₙ) are found.
+Advantages
+•	Generality: It can solve any system of n linear equations with n unknowns, provided a unique solution exists.
+•	Systematic Approach: The method is algorithmic and easy to program for computers.
+•	Exactness: Theoretically, it produces the exact solution (ignoring computer round-off errors) unlike iterative methods that produce approximations.
+Disadvantages
+•	Computational Cost: It is computationally expensive for very large systems, with a time complexity of approximately O(n³).
+•	Round-off Errors: In computer implementation, the repeated arithmetic operations can accumulate round-off errors, leading to inaccurate results for ill-conditioned matrices.
+•	Division by Zero: If a pivot element is zero, the method fails unless row swapping (partial pivoting) is implemented.
+
+
 
 #### <a name="gauss-elimination-code"></a>Code
 ```cpp
