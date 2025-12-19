@@ -336,7 +336,21 @@ Limitations
 ### Newton Raphson Method
 
 #### <a name="newton-raphson-theory"></a>Theory
-[Add theory content here]
+Introduction
+The Newton–Raphson method is a powerful and widely used numerical technique for finding the roots of a nonlinear equation of the form f(x) = 0.
+This method is based on the concept of linear approximation. Starting from an initial guess close to the actual root, the method uses the tangent line at that point to estimate a better approximation of the root. By repeatedly applying this process, the approximations quickly converge to the exact root, provided the initial guess is chosen appropriately.
+The Newton–Raphson method is especially popular because of its fast (quadratic) convergence, making it more efficient than methods such as the bisection or false position methods.
+Algorithm of the Newton–Raphson Method
+Let f(x) be a differentiable function and f'(x) be its derivative.
+•	Step 1: Choose an initial approximation x₀ close to the actual root.
+•	Step 2: Evaluate f(x₀) and f'(x₀).
+•	Step 3: Compute the next approximation using the formula:
+x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
+•	Step 4: Check the stopping condition: If |x_(n+1) - x_n| < ε (where ε is the tolerance), stop the iteration.
+•	Step 5: Otherwise, set x_n = x_(n+1) and repeat Step 3.
+•	Step 6: The final value of x_n is taken as the approximate root of the equation.
+
+
 
 #### <a name="newton-raphson-code"></a>Code
 ```cpp
