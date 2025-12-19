@@ -327,19 +327,107 @@ Where:
 
 #### <a name="false-position-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:
+#include <bits/stdc++.h>
+#define ld long double
+using namespace std;
+ld f(ld x, const vector<ld> &cof) {
+    ld sum = 0.0;
+    int n = cof.size();
+    for (int i = 0; i < n; i++)
+        sum += cof[i] * powl(x, n - 1 - i);
+    return sum;
+}
+int main() {
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    int test;
+    cin >> test;
+    for (int tt = 1; tt <= test; tt++) {
+        cout << "Test Case : " << tt << "...\n\n";
+        int degree;
+        cin >> degree;
+        vector<ld> cof(degree + 1);
+        for (int i = 0; i <= degree; i++)
+            cin >> cof[i];
+        ld a, b, E;
+        cin >> a >> b >> E;
+        ld fa = f(a, cof);
+        ld fb = f(b, cof);
+        if (fa * fb >= 0) {
+            cout << "Invalid initial guesses. f(a) and f(b) must have opposite signs.\n\n";
+            continue;
+        }
+        cout << setw(10) << "Iteration"<< setw(15) << "a"<< setw(15) << "b"<< setw(15) << "c"<< setw(20) << "f(c)" << endl;
+        ld c, fc;
+        int iter = 0;
+        do {
+            c = (a * fb - b * fa) / (fb - fa);
+            fc = f(c, cof);
+            cout << setw(10) << ++iter<< setw(15) << fixed << setprecision(6) << a<< setw(15) << b<< setw(15) << c<< setw(20) << fc << endl;
+            if (fa * fc < 0) {
+                b = c;
+                fb = fc;
+            } else {
+                a = c;
+                fa = fc;
+            }
+        } while (fabsl(fc) > E);
+        cout << "\nRoot is approximately: " << c << endl;
+        cout << "Total iterations: " << iter << "\n\n";
+    }
+    return 0;
+}
 ```
 [Open False_Position.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/False_Position.cpp)
 
 #### <a name="false-position-input"></a>Input
 ```
 [Add input format/example here]
+3
+2
+1 -4 -10
+1
+3
+0.0001
+
+3
+1 -6 11 -6
+1
+2
+0.00001
+
+4
+1 0 -10 0 9
+0
+2
+0.00001
+
 ```
 [Open input.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/input.txt)
 
 #### <a name="false-position-output"></a>Output
 ```
 [Add output format/example here]
+Test Case : 1...
+
+Invalid initial guesses. f(a) and f(b) must have opposite signs.
+
+Test Case : 2...
+
+Invalid initial guesses. f(a) and f(b) must have opposite signs.
+
+Test Case : 3...
+
+ Iteration              a              b              c                f(c)
+         1       0.000000       2.000000       0.750000            3.691406
+         2       0.750000       2.000000       0.996865            0.050117
+         3       0.996865       2.000000       1.000206           -0.003291
+         4       0.996865       1.000206       1.000000            0.000003
+
+Root is approximately: 1.000000
+Total iterations: 4
+
 ```
 [Open output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/output.txt)
 
