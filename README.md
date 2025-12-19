@@ -1543,6 +1543,25 @@ int main() {
 #### <a name="forward-interpolation-theory"></a>Theory
 [Add theory content here]
 
+Introduction
+Newton’s Forward Difference Interpolation is a numerical method used to approximate the value of a function at a point within the range of a given dataset.
+Theory: This method is specifically designed for datasets where the input values (x) are equally spaced (i.e., the step size h is constant). It utilizes forward differences (denoted by Δ) and is most accurate when the point to be interpolated lies near the beginning (top) of the data table.
+Algorithm
+1.	Construct the Forward Difference Table: Calculate the first differences (Δy), second differences (Δ²y), and so on, until the differences become constant or zero.
+o	Δy₀ = y₁ – y₀
+o	Δ²y₀ = Δy₁ – Δy₀
+2.	Calculate u: Determine the normalized variable u using the formula: u = (x – x₀) / h (Where x is the point to find, x₀ is the first value, and h is the step size).
+3.	Apply Formula: Use the formula to find y(x):
+y(x) = y₀ + u(Δy₀) + [u(u-1) / 2!] × Δ²y₀ + [u(u-1)(u-2) / 3!] × Δ³y₀ + ...
+Advantages
+•	Simplicity: The formula is straightforward and easy to compute for equally spaced data.
+•	Accuracy at Start: It provides high accuracy for values close to the starting value (x₀).
+Disadvantages
+•	Restriction: It is strictly valid only for equally spaced intervals.
+•	Location Specific: It becomes less accurate as the point moves towards the end of the table (where Backward Interpolation is preferred).
+
+
+
 #### <a name="forward-interpolation-code"></a>Code
 ```cpp
 // View the code file here:
@@ -1628,6 +1647,36 @@ Interpolated value at x = 1.5 is: 2.25
 #### <a name="backward-interpolation-theory"></a>Theory
 [Add theory content here]
 
+Introduction
+
+Newton’s Backward Difference Interpolation is the counterpart to the Forward method, used for approximating values near the end of a dataset.
+
+Theory: Like the Forward method, this requires equally spaced intervals. However, it uses backward differences (denoted by ∇) and references values starting from the last point (xₙ) and moving backward. It is best used when the value to be interpolated lies near the end (bottom) of the table.
+
+Algorithm
+
+Construct the Backward Difference Table: Calculate differences similar to the forward method but indexed from the end.
+
+∇yₙ = yₙ – yₙ₋₁
+
+Calculate u: Determine the normalized variable u using the formula: u = (x – xₙ) / h (Where xₙ is the last value in the dataset).
+
+Apply Formula: Use the formula to find y(x):
+
+y(x) = yₙ + u(∇yₙ) + [u(u+1) / 2!] × ∇²yₙ + [u(u+1)(u+2) / 3!] × ∇³yₙ + ... (Note the use of u+1 instead of u-1).
+
+Advantages
+
+End-of-Data Accuracy: It is the most accurate method for estimating values near the end of the dataset.
+
+Complementary: Works perfectly in conjunction with the Forward method to cover the whole range.
+
+Disadvantages
+
+Restriction: Requires equal spacing of x values.
+
+Not for Middle: Less accurate for points located in the exact center of the table (Stirling’s or Bessel’s formulas are better there).
+
 #### <a name="backward-interpolation-code"></a>Code
 ```cpp
 // View the code file here:  
@@ -1652,6 +1701,38 @@ Interpolated value at x = 1.5 is: 2.25
 
 #### <a name="divided-difference-theory"></a>Theory
 [Add theory content here]
+
+Introduction
+
+Newton’s Divided Difference Interpolation is a versatile general formula used for interpolation when the interval step sizes are unequal.
+
+Theory: Unlike the Forward/Backward methods, this does not assume the input values (x) are equally spaced. It uses divided differences, which are differences in function values divided by the differences in their corresponding x values. The resulting polynomial is constructed progressively, meaning new data points can be added without recalculating the entire set.
+
+Algorithm
+
+Calculate Divided Differences: Compute the first, second, and higher-order divided differences.
+
+First Order: f[x₀, x₁] = (f(x₁) – f(x₀)) / (x₁ – x₀)
+
+Second Order: f[x₀, x₁, x₂] = (f[x₁, x₂] – f[x₀, x₁]) / (x₂ – x₀)
+
+Apply Formula: Construct the interpolating polynomial:
+
+f(x) = f(x₀) + (x – x₀) f[x₀, x₁] + (x – x₀)(x – x₁) f[x₀, x₁, x₂] + ...
+
+Advantages
+
+Unequal Intervals: It works for both equally and unequally spaced data, making it universally applicable.
+
+Flexibility: Adding a new data point only adds one new term to the polynomial; it does not require recalculating previous coefficients (unlike Lagrange Interpolation).
+
+Polynomial Degree: The degree of the polynomial is evident immediately from the number of terms.
+
+Disadvantages
+
+Calculation Complexity: The manual construction of the divided difference table is more arithmetic-heavy than simple difference tables.
+
+Sensitivity: Like all polynomial interpolation, it can be sensitive to errors in data points (oscillations)
 
 #### <a name="divided-difference-code"></a>Code
 ```cpp
