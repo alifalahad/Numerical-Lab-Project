@@ -855,6 +855,33 @@ Determinant = 0 → No unique solution (infinite or none).
 #### <a name="matrix-inversion-theory"></a>Theory
 [Add theory content here]
 
+Introduction
+The Matrix Inversion method using determinants and cofactors is a classic analytical approach to solving systems of linear equations (Ax = b) or finding the inverse of a matrix.
+Theory: For a square matrix A, the inverse A⁻¹ exists if and only if the determinant of A (denoted as |A|) is non-zero. The inverse is calculated using the formula:
+A⁻¹ = (1 / |A|) × adj(A)
+Where adj(A) is the Adjoint matrix, which is the transpose of the Cofactor matrix. Once the inverse is found, the system solution is x = A⁻¹b.
+Algorithm
+The process involves four major steps:
+1.	Calculate the Determinant (|A|): Compute the determinant of the matrix.
+o	If |A| = 0, the matrix is singular (no inverse exists), and the method terminates.
+2.	Find the Cofactor Matrix: For every element A[i][j] in the matrix, calculate its cofactor C[i][j].
+o	Minor (M): The determinant of the sub-matrix left after removing row i and column j.
+o	Cofactor formula: C[i][j] = (-1)^(i+j) × M[i][j].
+3.	Find the Adjoint Matrix (adj(A)): Take the transpose of the Cofactor matrix. (Swap rows with columns: adj[i][j] = C[j][i]).
+4.	Compute Inverse and Solve:
+o	Multiply every element of the Adjoint matrix by (1 / |A|) to get A⁻¹.
+o	Finally, multiply A⁻¹ by the constant vector b to find the solution vector x.
+Advantages
+•	Theoretical Clarity: This method provides an exact, closed-form algebraic formula for the solution, which is useful for theoretical proofs and symbolic derivations.
+•	Small Systems: It is straightforward and easy to implement by hand for small matrices (e.g., 2×2 or 3×3).
+•	Element Independence: Unlike elimination methods, each element of the inverse can be calculated independently if needed.
+Disadvantages
+•	Computational Complexity: This is one of the most computationally expensive methods for large matrices. Calculating determinants and cofactors for an n × n matrix has a factorial time complexity (O(n!)) if done recursively, making it impractical for n > 4.
+•	Memory Intensive: It requires storing the cofactor matrix and the adjoint matrix.
+•	Rounding Errors: For floating-point numbers, the calculation of determinants can become numerically unstable, leading to significant errors in the final result.
+
+
+
 #### <a name="matrix-inversion-code"></a>Code
 ```cpp
 // View the code file here:
