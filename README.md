@@ -225,6 +225,28 @@ written the code
 
 #### <a name="bisection-theory"></a>Theory
 [Add theory content here]
+Introduction
+If a continuous function f(x) changes sign between two points a and b — meaning: f(a) × f(b) < 0 then, by the Intermediate Value Theorem, there is at least one root between a and b.
+The bisection method repeatedly divides the interval in half and selects the subinterval where the sign change occurs, thus narrowing down the region containing the root.
+Steps of the Bisection Method
+1.	Choose initial interval [a, b] such that f(a) × f(b) < 0.
+2.	Find midpoint: c = (a + b) / 2
+3.	Evaluate f(c).
+4.	Decide new interval:
+o	If f(a) × f(c) < 0, then the root lies between a and c. → Set b = c
+o	If f(c) × f(b) < 0, then the root lies between c and b. → Set a = c
+5.	Repeat steps 2–4 until the interval [a, b] is small enough ( until the error is below a desired tolerance).
+6.	Approximate root: The final midpoint c is taken as the approximate root.
+
+Advantages
+•	Always convergent if f(x) is continuous and f(a)f(b)< 0
+•	Simple and easy to implement
+ Disadvantages
+•	Slow convergence (linear rate)
+•	Requires that you know two points with opposite signs
+•	Not efficient for complex or multiple roots
+
+
 
 #### <a name="bisection-code"></a>Code
 ```cpp
