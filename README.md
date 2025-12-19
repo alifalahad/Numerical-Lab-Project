@@ -2068,6 +2068,25 @@ Enter z to predict: Estimated y: 91.7525
 #### <a name="simpsons-13-theory"></a>Theory
 [Add theory content here]
 
+Introduction
+Simpson’s 1/3 Rule is a numerical integration method used to approximate the definite integral of a function f(x) within a given range [a, b]. It is generally more accurate than the Trapezoidal Rule for the same number of intervals.
+Theory: This method approximates the area under the curve by connecting groups of three points using parabolas (second-degree polynomials). Because it uses pairs of sub-intervals to form these parabolas, the total number of sub-intervals n must be an even number.
+Algorithm
+1.	Discretize the Domain:
+o	Choose an even number of intervals, n.
+o	Calculate the step size: h = (b – a) / n.
+2.	Generate Points: Compute the function values (y₀, y₁, ..., yₙ) at each step x.
+3.	Apply Formula: Use the Simpson’s 1/3 formula:
+Area ≈ (h / 3) × [ (First + Last) + 4 × (Sum of Odds) + 2 × (Sum of Evens) ]
+Mathematically: I = (h / 3) [ (y₀ + yₙ) + 4(y₁ + y₃ + ... + yₙ₋₁) + 2(y₂ + y₄ + ... + yₙ₋₂) ]
+Advantages
+•	Higher Accuracy: It provides much better accuracy (order O(h⁴)) compared to the Trapezoidal Rule (O(h²)) because it accounts for the curvature of the function.
+•	Exact for Quadratics: It gives the exact area if the function being integrated is a polynomial of degree 2 or less.
+Disadvantages
+•	Constraint: It strictly requires the number of sub-intervals n to be even. If n is odd, the method cannot be applied directly over the whole range.
+
+
+
 #### <a name="simpsons-13-code"></a>Code
 ```cpp
 // View the code file here:
@@ -2150,6 +2169,40 @@ Integration value: 2.666667
 
 #### <a name="simpsons-38-theory"></a>Theory
 [Add theory content here]
+
+Introduction
+
+Simpson’s 3/8 Rule is another numerical integration technique, similar to the 1/3 rule but based on a higher-order interpolation.
+
+Theory: This method approximates the function using cubic interpolation (third-degree polynomials). It connects four points at a time. Consequently, the total number of sub-intervals n must be a multiple of 3 (e.g., 3, 6, 9, 12).
+
+Algorithm
+
+Discretize the Domain:
+
+Choose a number of intervals n that is a multiple of 3.
+
+Calculate the step size: h = (b – a) / n.
+
+Generate Points: Compute the function values (y₀, y₁, ..., yₙ).
+
+Apply Formula: Use the Simpson’s 3/8 formula:
+
+Area ≈ (3h / 8) × [ (First + Last) + 3 × (Sum of Non-Multiples of 3) + 2 × (Sum of Multiples of 3) ]
+
+Mathematically: I = (3h / 8) [ (y₀ + yₙ) + 3(y₁ + y₂ + y₄ + y₅ + ...) + 2(y₃ + y₆ + y₉ + ...) ]
+
+Advantages
+
+Smooth Functions: It is generally more accurate than the 1/3 rule for functions that are smoother or have higher-order curvature.
+
+Exact for Cubics: It gives the exact area if the function is a polynomial of degree 3 or less.
+
+Disadvantages
+
+Stricter Constraint: The requirement that n must be a multiple of 3 makes it less flexible than the 1/3 rule or the Trapezoidal rule.
+
+Computation: It requires slightly more arithmetic operations per interval than the 1/3 rule.
 
 #### <a name="simpsons-38-code"></a>Code
 ```cpp
