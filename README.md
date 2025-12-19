@@ -125,8 +125,7 @@
 
 #### <a name="gauss-elimination-code"></a>Code
 ```cpp
-// View the code file here:
-written the code 
+// View the code file here: 
 ```
 [Open Gauss_Elimination.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/Gauss_Elimination.cpp)
 
@@ -134,7 +133,7 @@ written the code
 ```
 [Add input format/example here]
 ```
-[Open input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/input. txt)
+[Open input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/input.txt)
 
 #### <a name="gauss-elimination-output"></a>Output
 ```
@@ -151,7 +150,7 @@ written the code
 
 #### <a name="gauss-jordan-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
 [Open Gauss_Jordan.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/Gauss_Jordan.cpp)
 
@@ -165,7 +164,7 @@ written the code
 ```
 [Add output format/example here]
 ```
-[Open output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/output. txt)
+[Open output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_JORDAN/output.txt)
 
 ---
 
@@ -176,7 +175,7 @@ written the code
 
 #### <a name="lu-decomposition-code"></a>Code
 ```cpp
-// View the code file here:  
+// View the code file here:   
 ```
 [Open LU_DECOMPOSITION.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/LU_DECOMPOSITION/LU_DECOMPOSITION.cpp)
 
@@ -184,7 +183,7 @@ written the code
 ```
 [Add input format/example here]
 ```
-[Open input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/input. txt)
+[Open input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/LU_DECOMPOSITION/input.txt)
 
 #### <a name="lu-decomposition-output"></a>Output
 ```
@@ -201,7 +200,7 @@ written the code
 
 #### <a name="matrix-inversion-code"></a>Code
 ```cpp
-// View the code file here:  
+// View the code file here:   
 ```
 [Open Matrix_Inversion.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/Matrix_Inversion. cpp)
 
@@ -215,7 +214,7 @@ written the code
 ```
 [Add output format/example here]
 ```
-[Open output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/output.txt)
+[Open output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/output. txt)
 
 ---
 
@@ -224,33 +223,42 @@ written the code
 ### Bisection Method
 
 #### <a name="bisection-theory"></a>Theory
-[Add theory content here]
-Introduction
-If a continuous function f(x) changes sign between two points a and b — meaning: f(a) × f(b) < 0 then, by the Intermediate Value Theorem, there is at least one root between a and b.
-The bisection method repeatedly divides the interval in half and selects the subinterval where the sign change occurs, thus narrowing down the region containing the root.
-Steps of the Bisection Method
-1.	Choose initial interval [a, b] such that f(a) × f(b) < 0.
-2.	Find midpoint: c = (a + b) / 2
-3.	Evaluate f(c).
-4.	Decide new interval:
-o	If f(a) × f(c) < 0, then the root lies between a and c. → Set b = c
-o	If f(c) × f(b) < 0, then the root lies between c and b. → Set a = c
-5.	Repeat steps 2–4 until the interval [a, b] is small enough ( until the error is below a desired tolerance).
-6.	Approximate root: The final midpoint c is taken as the approximate root.
 
-Advantages
-•	Always convergent if f(x) is continuous and f(a)f(b)< 0
-•	Simple and easy to implement
- Disadvantages
-•	Slow convergence (linear rate)
-•	Requires that you know two points with opposite signs
-•	Not efficient for complex or multiple roots
+**Overview**
 
+The Bisection Method is a reliable numerical technique for finding roots of continuous functions. It operates on the principle of the Intermediate Value Theorem:  if a continuous function f(x) changes sign over an interval [a, b], then there exists at least one root within that interval.
 
+**Mathematical Foundation**
+
+For a root to exist in interval [a, b]: 
+- f(a) × f(b) < 0 (opposite signs)
+
+**Algorithm Steps**
+
+1. **Initialization**: Select interval [a, b] where f(a) × f(b) < 0
+2. **Midpoint Calculation**: Compute c = (a + b) / 2
+3. **Function Evaluation**: Calculate f(c)
+4. **Interval Update**:
+   - If f(a) × f(c) < 0 → New interval:  [a, c] (set b = c)
+   - If f(c) × f(b) < 0 → New interval:  [c, b] (set a = c)
+5. **Convergence Check**:  Repeat until |b - a| < tolerance
+6. **Result**: Final midpoint c approximates the root
+
+**Key Characteristics**
+
+✅ **Advantages:**
+- Guaranteed convergence for continuous functions
+- Simple implementation
+- Reliable and robust
+
+❌ **Limitations:**
+- Slow convergence (linear rate)
+- Requires initial interval with sign change
+- Inefficient for multiple or complex roots
 
 #### <a name="bisection-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
 [Open Bisection.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/Bisection.cpp)
 
@@ -271,92 +279,125 @@ Advantages
 ### False Position Method
 
 #### <a name="false-position-theory"></a>Theory
-Theory
-The False Position method is a bracketing root-finding technique that combines the concepts of the Bisection method and Linear Interpolation.
-Given a continuous function f(x) such that: f(a) ⋅ f(b) < 0 there exists at least one real root in the interval [a, b].
-The root approximation is calculated using the formula:
-c = [a f(b) – b f(a)] / [f(b) – f(a)]
-The interval is then updated based on the sign of f(c), and the process continues until the desired accuracy is achieved.
-Algorithm
-1.	Read the number of test cases.
-2.	For each test case:
-o	Read the degree and coefficients of the polynomial.
-o	Read the initial guesses a, b and error tolerance E.
-o	Evaluate f(a) and f(b).
-3.	If f(a) ⋅ f(b) ≥ 0, terminate (invalid interval).
-4.	Compute: c = [a f(b) – b f(a)] / [f(b) – f(a)]
-5.	Update the interval:
-o	If f(a) ⋅ f(c) < 0, set b = c
-o	Else, set a = c
-6.	Repeat until |f(c)| ≤ E.
-7.	Display the root and number of iterations.
-Implementation Details
-•	The polynomial is evaluated using a coefficient vector.
-•	long double is used for higher precision.
-•	Input and output are handled through files (input.txt, output.txt).
-•	A formatted iteration table displays values of a, b, c, and f(c) at each step.
-Sample Output (Description)
-The program prints:
-•	Iteration number
-•	Current values of a, b, and c
-•	Function value f(c)
-•	Final approximate root
-•	Total number of iterations
-Advantages
-•	Guarantees convergence when the initial bracket is valid.
-•	More accurate than the bisection method due to linear interpolation.
-•	Simple and efficient for polynomial equations.
-Limitations
-•	Convergence can be slow when one endpoint remains fixed.
-•	Requires an initial interval with opposite signs.
-•	Not suitable for functions with multiple roots in the interval.
 
+**Overview**
 
+The False Position Method (Regula Falsi) is an enhanced bracketing technique that combines bisection with linear interpolation. It typically converges faster than bisection by using a weighted average based on function values.
+
+**Mathematical Formula**
+
+Root approximation: 
+```
+c = [a × f(b) - b × f(a)] / [f(b) - f(a)]
+```
+
+Where:
+- [a, b] is the bracketing interval
+- f(a) · f(b) < 0
+
+**Algorithm**
+
+1. **Input**: Degree, coefficients, initial guesses a and b, tolerance E
+2. **Validation**:  Verify f(a) · f(b) < 0
+3. **Compute**: c using linear interpolation formula
+4. **Update Interval**:
+   - If f(a) · f(c) < 0 → set b = c
+   - Otherwise → set a = c
+5. **Iterate**: Repeat until |f(c)| ≤ E
+6. **Output**: Root value and iteration count
+
+**Implementation Features**
+
+- Uses `long double` for enhanced precision
+- File-based I/O (input. txt, output.txt)
+- Displays iteration table with a, b, c, and f(c) values
+- Polynomial evaluation via coefficient vector
+
+**Key Characteristics**
+
+✅ **Advantages:**
+- Faster than bisection method
+- Guaranteed convergence with valid bracket
+- Good accuracy for polynomial equations
+
+❌ **Limitations:**
+- Can be slow when one endpoint is fixed
+- Requires sign change in initial interval
+- Not ideal for multiple roots
 
 #### <a name="false-position-code"></a>Code
 ```cpp
 // View the code file here: 
 ```
-[Open False_Position.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/False_Position. cpp)
+[Open False_Position.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/False_Position.cpp)
 
 #### <a name="false-position-input"></a>Input
 ```
 [Add input format/example here]
 ```
-[Open input.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/input. txt)
+[Open input.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/input.txt)
 
 #### <a name="false-position-output"></a>Output
 ```
 [Add output format/example here]
 ```
-[Open output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/output. txt)
+[Open output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/FALSE_POSITION/output.txt)
 
 ---
 
 ### Newton Raphson Method
 
 #### <a name="newton-raphson-theory"></a>Theory
-Introduction
-The Newton–Raphson method is a powerful and widely used numerical technique for finding the roots of a nonlinear equation of the form f(x) = 0.
-This method is based on the concept of linear approximation. Starting from an initial guess close to the actual root, the method uses the tangent line at that point to estimate a better approximation of the root. By repeatedly applying this process, the approximations quickly converge to the exact root, provided the initial guess is chosen appropriately.
-The Newton–Raphson method is especially popular because of its fast (quadratic) convergence, making it more efficient than methods such as the bisection or false position methods.
-Algorithm of the Newton–Raphson Method
-Let f(x) be a differentiable function and f'(x) be its derivative.
-•	Step 1: Choose an initial approximation x₀ close to the actual root.
-•	Step 2: Evaluate f(x₀) and f'(x₀).
-•	Step 3: Compute the next approximation using the formula:
-x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
-•	Step 4: Check the stopping condition: If |x_(n+1) - x_n| < ε (where ε is the tolerance), stop the iteration.
-•	Step 5: Otherwise, set x_n = x_(n+1) and repeat Step 3.
-•	Step 6: The final value of x_n is taken as the approximate root of the equation.
 
+**Overview**
 
+The Newton-Raphson Method is one of the most powerful and widely-used iterative techniques for solving nonlinear equations f(x) = 0. It leverages the tangent line at an initial guess to rapidly approximate the actual root, offering quadratic convergence under suitable conditions.
+
+**Mathematical Principle**
+
+The method uses linear approximation via the derivative: 
+
+```
+x_(n+1) = x_n - f(x_n) / f'(x_n)
+```
+
+Where:
+- x_n is the current approximation
+- f(x_n) is the function value
+- f'(x_n) is the derivative at x_n
+
+**Algorithm**
+
+1. **Initialize**: Choose x₀ near the expected root
+2. **Compute**:  Evaluate f(x₀) and f'(x₀)
+3. **Update**: Calculate x₁ = x₀ - [f(x₀) / f'(x₀)]
+4. **Check Convergence**: If |x₁ - x₀| < ε, stop
+5. **Iterate**: Set x₀ = x₁ and repeat steps 2-4
+6. **Result**: Final x_n is the approximate root
+
+**Convergence Behavior**
+
+- **Quadratic convergence** near the root (very fast)
+- Requires good initial guess
+- Derivative must be non-zero
+
+**Key Characteristics**
+
+✅ **Advantages:**
+- Extremely fast convergence (quadratic)
+- Efficient for well-behaved functions
+- Fewer iterations than bracketing methods
+
+❌ **Limitations:**
+- Requires derivative calculation
+- May diverge with poor initial guess
+- Fails when f'(x) = 0
 
 #### <a name="newton-raphson-code"></a>Code
 ```cpp
-// View the code file here:
+// View the code file here: 
 ```
-[Open Newton_Raphson. cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/Newton_Raphson.cpp)
+[Open Newton_Raphson.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/Newton_Raphson.cpp)
 
 #### <a name="newton-raphson-input"></a>Input
 ```
@@ -379,7 +420,7 @@ x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
 
 #### <a name="secant-code"></a>Code
 ```cpp
-// View the code file here:
+// View the code file here: 
 ```
 [Open Secant.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/SECANT_METHOD/Secant.cpp)
 
@@ -431,7 +472,7 @@ x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
 
 #### <a name="backward-interpolation-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
 [Open newton_backward.cpp](./src/Newton%20interpolation/Backward/newton_backward.cpp)
 
@@ -456,7 +497,7 @@ x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
 
 #### <a name="divided-difference-code"></a>Code
 ```cpp
-// View the code file here:
+// View the code file here: 
 ```
 [Open div. cpp](./src/Newton%20interpolation/divided%20difference/div.cpp)
 
@@ -485,7 +526,7 @@ x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
 ```cpp
 // View the code file here:
 ```
-[Open linear.cpp](./src/Curve%20Fitting/regression/Linear/linear.cpp)
+[Open linear. cpp](./src/Curve%20Fitting/regression/Linear/linear.cpp)
 
 #### <a name="linear-regression-input"></a>Input
 ```
@@ -541,7 +582,7 @@ x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
 ```
 [Add input format/example here]
 ```
-[Open input_trans.txt](./src/Curve%20Fitting/regression/trascendental/input_trans. txt)
+[Open input_trans.txt](./src/Curve%20Fitting/regression/trascendental/input_trans.txt)
 
 #### <a name="transcendental-regression-output"></a>Output
 ```
@@ -562,7 +603,7 @@ x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
 ```cpp
 // View the code file here:  
 ```
-[Open one_third.cpp](./src/NUMERICAL_INTEGRATION/ONE_THIRD_RULE/one%20_third.cpp)
+[Open one_third.cpp](./src/NUMERICAL_INTEGRATION/ONE_THIRD_RULE/one%20_third. cpp)
 
 #### <a name="simpsons-13-input"></a>Input
 ```
@@ -585,7 +626,7 @@ x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
 
 #### <a name="simpsons-38-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
 [Open newton3_8.cpp](./src/NUMERICAL_INTEGRATION/THREE_EIGHT_RULE/newton3_8.cpp)
 
@@ -612,7 +653,7 @@ x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
 
 #### <a name="forward-differentiation-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:  
 ```
 [Open Differentiation_FI.cpp](./src/Direct%20Differentiation/forward/Differentiation_FI.cpp)
 
@@ -620,13 +661,13 @@ x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
 ```
 [Add input format/example here]
 ```
-[Open input_diff_fwd. txt](./src/Direct%20Differentiation/forward/input_diff_fwd.txt)
+[Open input_diff_fwd.txt](./src/Direct%20Differentiation/forward/input_diff_fwd.txt)
 
 #### <a name="forward-differentiation-output"></a>Output
 ```
 [Add output format/example here]
 ```
-[Open output_diff_fwd.txt](./src/Direct%20Differentiation/forward/output_diff_fwd.txt)
+[Open output_diff_fwd. txt](./src/Direct%20Differentiation/forward/output_diff_fwd.txt)
 
 ---
 
@@ -683,7 +724,7 @@ x_(n+1) = x_n - [ f(x_n) / f'(x_n) ]
 ---
 
 ## Contributing
-This is a course project for CSE 2208. Feel free to explore the implementations and learn from the numerical methods. 
+This is a course project for CSE 2208.  Feel free to explore the implementations and learn from the numerical methods.  
 
 ## License
 Educational purposes only. 
