@@ -324,6 +324,29 @@ Augmented Mstrix:
 
 #### <a name="gauss-jordan-theory"></a>Theory
 [Add theory content here]
+Introduction
+The Gauss-Jordan Elimination method is a variation of the Gauss Elimination method used to solve systems of linear equations or to find the inverse of a matrix.
+Theory: While Gauss Elimination reduces the matrix to an upper triangular form (requiring back substitution), Gauss-Jordan Elimination continues the reduction process until the matrix reaches Reduced Row Echelon Form (RREF). Theoretically, this transforms the coefficient matrix A into an Identity Matrix (I). Since the operations are applied to the augmented matrix, the constant vector b is simultaneously transformed directly into the solution vector x, eliminating the need for back substitution entirely.
++1
+Algorithm
+1.	Form the Augmented Matrix: Create the matrix [A | b] containing coefficients and constants.
+2.	Pivot Selection & Normalization: For each row i (from 1 to n):
+o	Select the diagonal element A[i][i] as the pivot.
+o	Normalize: Divide the entire row i by the pivot element so that the pivot becomes 1.
+3.	Elimination (Above and Below): For every other row j (where j ≠ i):
+o	Eliminate the element in the pivot's column (A[j][i]) by subtracting a multiple of the pivot row from row j.
+o	Formula: Row_j = Row_j – (A[j][i] × Row_i)
+4.	Repeat: Continue this process for all diagonal elements. Upon completion, the matrix will look like [I | x], where the right-hand column contains the solution values.
+Advantages
+•	No Back Substitution: The variables are solved for directly at the end of the process, simplifying the final extraction of results.
+•	Matrix Inversion: It is the standard direct method for computing the inverse of a matrix (by augmenting A with the Identity Matrix I instead of vector b).
+•	Simplicity in Code: The algorithm structure is slightly more uniform than Gauss Elimination since both upper and lower elements are treated similarly.
+Disadvantages
+•	Higher Computational Cost: It requires approximately 50% more arithmetic operations than standard Gauss Elimination, making it less efficient for solving simple systems of equations.
+•	Round-off Errors: Like Gauss Elimination, it is sensitive to error accumulation and requires pivoting strategies to handle small or zero diagonal elements.
+•	Memory Usage: It modifies the entire matrix structure, which can be inefficient for sparse matrices.
+
+
 
 #### <a name="gauss-jordan-code"></a>Code
 ```cpp
