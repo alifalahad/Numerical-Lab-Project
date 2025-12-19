@@ -1191,19 +1191,113 @@ Where:
 
 #### <a name="newton-raphson-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int degree;
+vector<double> coeffs;
+
+double f(double x) {
+    double result = coeffs[0];
+    for (int i = 1; i <= degree; i++) {
+        result = result * x + coeffs[i];
+    }
+    return result;
+}
+
+double f_prime(double x) {
+    double result = degree * coeffs[0];
+    for (int i = 1; i < degree; i++) {
+        result = result * x + (degree - i) * coeffs[i];
+    }
+    return result;
+}
+
+int main() {
+    freopen("input_nr.txt" , "r" , stdin);
+    freopen("output_nr.txt" , "w" ,stdout);
+    cout << "Newton-Raphson Method for Root Finding" << endl;
+
+    
+    //cout << "\nEnter the degree of polynomial: ";
+    cin >> degree;
+    
+    if (degree < 1) {
+        cout << "Error: Degree must be at least 1." << endl;
+        return 1;
+    }
+    
+    coeffs.resize(degree + 1);
+    //cout << "Enter " << (degree + 1) << " coefficients (from a_" << degree << " to a_0):" << endl;
+    for (int i = 0; i <= degree; i++) {
+        //cout << "Coefficient a_" << (degree - i) << ": ";
+        cin >> coeffs[i];
+    }
+    
+    double x0;       
+    double tol;     
+    int max_iter;   
+    //cout << "\nEnter initial guess: ";
+    cin >> x0;
+    //cout << "Enter tolerance: ";
+    cin >> tol;
+    //cout << "Enter maximum iterations: ";
+    cin >> max_iter;
+
+    double x1;
+    int iter = 0;
+
+
+    while (iter < max_iter) {
+        double fx = f(x0);
+        double fpx = f_prime(x0);
+        
+        if (fabs(fpx) < 1e-10) {
+            cout << "Error: Derivative too close to zero. Method fails." << endl;
+            return 1;
+        }
+        
+        x1 = x0 - fx / fpx;
+
+        cout << "Iteration " << (iter + 1) << ": x = " << x1 << endl;
+
+        if (fabs(x1 - x0) < tol) {
+            break;
+        }
+        x0 = x1;
+        iter++;
+    }
+
+    cout << "Root = " << x1 << endl;
+    cout << "Iterations = " << iter + 1 << endl;
+
+    return 0;
+}
 ```
 [Open Newton_Raphson.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/Newton_Raphson.cpp)
 
 #### <a name="newton-raphson-input"></a>Input
 ```
 [Add input format/example here]
+2
+1 0 -4
+6 0.0001 10
 ```
 [Open input_nr.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/input_nr.txt)
 
 #### <a name="newton-raphson-output"></a>Output
 ```
 [Add output format/example here]
+Newton-Raphson Method for Root Finding
+Iteration 1: x = 3.33333
+Iteration 2: x = 2.26667
+Iteration 3: x = 2.01569
+Iteration 4: x = 2.00006
+Iteration 5: x = 2
+Root = 2
+Iterations = 5
 ```
 [Open output_nr.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/Newto-Raphson/output_nr.txt)
 
@@ -1216,19 +1310,77 @@ Where:
 
 #### <a name="secant-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:
+#include <bits/stdc++.h>
+using namespace std;
+int degree;
+vector<double> coeffs;
+double f(double x) {
+    double result = coeffs[0];
+    for (int i = 1; i <= degree; i++) {
+        result = result * x + coeffs[i];
+    }
+    return result;
+}
+double secant(double x0, double x1, double tol = 0.0001, int maxIter = 100) {
+    double x2;
+    int iter = 0;
+    while(abs(x2 - x1) > tol && iter < maxIter) {
+        double f0 = f(x0);
+        double f1 = f(x1);
+        if(f1 - f0 == 0) return NAN;
+        x2 = x1 - f1 * (x1 - x0) / (f1 - f0);
+        x0 = x1;
+        x1 = x2;
+        iter++;
+    }
+    return x2;
+}
+int main() {
+     freopen("input_sec.txt", "r", stdin);
+    freopen("output_sec.txt", "w", stdout);
+    cin >> degree;
+    coeffs.resize(degree + 1);
+    for (int i = 0; i <= degree; i++) {
+        cin >> coeffs[i];
+    }
+    double minRange, maxRange;
+    cin >> minRange >> maxRange;
+    double step = 0.1;
+    double tol = 0.0001;
+    vector<double> roots;
+    for(double x = minRange; x < maxRange; x += step) {
+        double x0 = x;
+        double x1 = x + step;
+        if(f(x0) * f(x1) <= 0) {
+            double root = secant(x0, x1, tol);
+            if(!isnan(root)) {
+                roots.push_back(root);
+            }
+        }
+    }
+    cout << fixed << setprecision(6);
+    for(double r : roots)
+        cout << r << endl;
+    return 0;
+}
 ```
 [Open Secant.cpp](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/SECANT_METHOD/Secant.cpp)
 
 #### <a name="secant-input"></a>Input
 ```
 [Add input format/example here]
+2
+1 0 -3
+-2 2
 ```
 [Open input_sec.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/SECANT_METHOD/input_sec.txt)
 
 #### <a name="secant-output"></a>Output
 ```
 [Add output format/example here]
+-1.731429
+1.731429
 ```
 [Open output_sec.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/SECANT_METHOD/output_sec.txt)
 
