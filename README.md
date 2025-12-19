@@ -1307,6 +1307,32 @@ Iterations = 5
 
 #### <a name="secant-theory"></a>Theory
 [Add theory content here]
+Introduction
+The Secant method is an iterative numerical technique used to find the roots of a function f(x) = 0. It is an open method that uses a secant line connecting two points on the curve to approximate the root.
+Unlike the Newton-Raphson method, the Secant method does not require the calculation of the derivative f'(x). Instead, it approximates the derivative using finite differences based on two previous points (xₙ₋₁ and xₙ). This makes it particularly useful when differentiating the function is difficult or computationally expensive. The method requires two initial guesses but does not require the root to be bracketed.
+Algorithm
+1.	Initialize:
+o	Choose two initial guesses, x₀ and x₁.
+o	Set a tolerance error E and a maximum number of iterations.
+2.	Iteration Step: For each iteration, calculate the next approximation xₙ₊₁ using the formula:
+x_(n+1) = x_n - f(x_n) * [ (x_n - x_(n-1)) / (f(x_n) - f(x_(n-1))) ]
+3.	Check Convergence:
+o	Calculate the absolute error: |xₙ₊₁ – xₙ|.
+o	If the error is ≤ E, the root is found.
+4.	Update:
+o	Set xₙ₋₁ = xₙ
+o	Set xₙ = xₙ₊₁
+o	Repeat Step 2 until convergence or maximum iterations are reached.
+Advantages
+•	No Derivative Needed: Unlike Newton-Raphson, it does not require analytical differentiation, making it suitable for complex functions.
+•	Faster than Bisection: It has a superlinear convergence rate (approx. 1.618), which is significantly faster than the linear convergence of the Bisection method.
+•	Efficiency: After the first step, it requires only one function evaluation per iteration (reusing the previous value).
+Disadvantages
+•	No Guaranteed Convergence: Unlike the Bisection method, the Secant method may diverge if the initial guesses are not close enough to the root.
+•	Slower than Newton-Raphson: Its convergence rate is slightly slower than Newton’s method (which is quadratic, 2.0).
+•	Numerical Instability: If f(xₙ) and f(xₙ₋₁) are nearly equal, the denominator approaches zero, potentially causing large errors or division by zero.
+
+
 
 #### <a name="secant-code"></a>Code
 ```cpp
