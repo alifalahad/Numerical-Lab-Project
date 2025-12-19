@@ -760,19 +760,167 @@ Determinant = 0 → No unique solution (infinite or none).
 
 #### <a name="matrix-inversion-code"></a>Code
 ```cpp
-// View the code file here:   
+// View the code file here:
+#include <bits/stdc++.h>
+using namespace std;
+// Function to get cofactor of A[p][q]
+void getCofactor(vector<vector<double>> &A, vector<vector<double>> &temp,int p, int q, int n) {
+    int i = 0, j = 0;
+    for (int row = 0; row < n; row++) {
+        for (int col = 0; col < n; col++) {
+            if (row != p && col != q) {
+                temp[i][j++] = A[row][col];
+                if (j == n - 1) {
+                    j = 0;
+                    i++;
+                }
+            }
+        }
+    }
+}
+// Determinant function
+double determinant(vector<vector<double>> &A, int n) {
+    if (n == 1)
+        return A[0][0];
+    double det = 0;
+    vector<vector<double>> temp(n, vector<double>(n));
+    int sign = 1;
+    for (int f = 0; f < n; f++) {
+        getCofactor(A, temp, 0, f, n);
+        det += sign * A[0][f] * determinant(temp, n - 1);
+        sign = -sign;
+    }
+    return det;
+}
+// Adjoint = transpose of cofactor matrix
+void adjoint(vector<vector<double>> &A, vector<vector<double>> &adj, int n) {
+    if (n == 1) {
+        adj[0][0] = 1;
+        return;
+    }
+    int sign;
+    vector<vector<double>> temp(n, vector<double>(n));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            getCofactor(A, temp, i, j, n);
+            sign = ((i + j) % 2 == 0) ? 1 : -1;
+            // adjoint = transpose of cofactor matrix
+            adj[j][i] = sign * determinant(temp, n - 1);
+        }
+    }
+}
+// Inverse = adj(A) / det(A)
+bool inverse(vector<vector<double>> &A, vector<vector<double>> &inv, int n) {
+    double det = determinant(A, n);
+    if (det == 0) {
+        cout << "Matrix is singular so No inverse exists.\n";
+        return false;
+    }
+    vector<vector<double>> adj(n, vector<double>(n));
+    adjoint(A, adj, n);
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            inv[i][j] = adj[i][j] / det;
+    return true;
+}
+int main() {
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    int test;
+    cin >> test;
+    for(int tt = 1; tt <= test; tt++)
+    {
+        cout << "Test Case : " << tt << "...\n\n";
+        int n;
+        cin >> n;
+        vector<vector<double>> A(n, vector<double>(n));
+        vector<vector<double>> inv(n, vector<double>(n));
+        vector<double> B(n), X(n);
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                cin >> A[i][j];
+        for (int i = 0; i < n; i++)
+            cin >> B[i];
+        if (inverse(A, inv, n)) {
+            cout << "\nInverse of matrix A:\n";
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++)
+                    cout << fixed << setprecision(4) << inv[i][j] << " ";
+                cout << endl;
+            }
+            // Compute X = A^-1 * B
+            for (int i = 0; i < n; i++) {
+                X[i] = 0;
+                for (int j = 0; j < n; j++)
+                    X[i] += inv[i][j] * B[j];
+            }
+            cout << "\nRoots :\n";
+            for (int i = 0; i < n; i++)
+                cout << "x" << i + 1 << " = " << fixed << setprecision(4) << X[i] << endl;
+        }
+    }
+    return 0;
+}
 ```
 [Open Matrix_Inversion.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/Matrix_Inversion. cpp)
 
 #### <a name="matrix-inversion-input"></a>Input
 ```
 [Add input format/example here]
+3
+
+3
+1 1 1
+2 5 3
+1 2 4
+6
+23
+17
+
+2
+2 1
+1 1
+5
+3
+
+2
+1 1
+2 2
+2
+4
+
+
 ```
 [Open input.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/input.txt)
 
 #### <a name="matrix-inversion-output"></a>Output
 ```
 [Add output format/example here]
+Test Case : 1...
+
+
+Inverse of matrix A:
+1.7500 -0.2500 -0.2500 
+-0.6250 0.3750 -0.1250 
+-0.1250 -0.1250 0.3750 
+
+Roots :
+x1 = 0.5000
+x2 = 2.7500
+x3 = 2.7500
+Test Case : 2...
+
+
+Inverse of matrix A:
+1.0000 -1.0000 
+-1.0000 2.0000 
+
+Roots :
+x1 = 2.0000
+x2 = 1.0000
+Test Case : 3...
+
+Matrix is singular so No inverse exists.
 ```
 [Open output.txt](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/MATRIX_INVERSION/output. txt)
 
