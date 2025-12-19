@@ -125,7 +125,8 @@
 
 #### <a name="gauss-elimination-code"></a>Code
 ```cpp
-// View the code file here:  
+// View the code file here:
+written the code 
 ```
 [Open Gauss_Elimination.cpp](./src/SOLUTION%20OF%20LINEAR%20EQUATIONS/GAUSS_ELIMINATION/Gauss_Elimination.cpp)
 
