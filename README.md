@@ -1832,6 +1832,7 @@ Final **x_n** is the approximate root.
 
 </details>
 #### <a name="newton-raphson-code"></a>Code
+
 ```cpp
 // View the code file here:
 #include <bits/stdc++.h>
