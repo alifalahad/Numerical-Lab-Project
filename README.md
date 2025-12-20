@@ -1,5 +1,12 @@
 # Numerical Lab Project
 **CSE 2208 - Numerical Methods Implementation**
+##  Contributors
+
+| Name | Roll Number |
+|------|-------------|
+| MD KHORSHED SHEIKH | 2207013 |
+| ALIF AL AHAD| 2207016 |
+| MD MEHEDI HASAN SHUVO | 2207028 
 
 ---
 
@@ -4097,8 +4104,8 @@ Final value: y(3.000000) = 27.000000
 
 ---
 
-## Contributing
-This is a course project for CSE 2208.  Feel free to explore the implementations and learn from the numerical methods.  
+|
 
+---
 ## License
 Educational purposes only. 
