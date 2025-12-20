@@ -3727,19 +3727,115 @@ Continue the process until the desired target **x** is reached.
 
 #### <a name="runge-kutta-code"></a>Code
 ```cpp
-// View the code file here: 
+// View the code file here:
+#include <bits/stdc++.h>
+using namespace std;
+using ld = long double;
+
+// Polynomial derivative function: dy/dx = f(x)
+ld dydx(ld x, const vector<ld> &cof) {
+    ld sum = 0.0;
+    int n = cof.size();
+    for (int i = 0; i < n - 1; i++) { // last term is constant
+        sum += cof[i] * (n - 1 - i) * powl(x, n - 2 - i);
+    }
+    return sum;
+}
+
+// Runge-Kutta 4th order method (dy/dx = f(x))
+ld rungeKutta(ld x0, ld y0, ld xEnd, ld h, const vector<ld> &cof) {
+    int n = (int)((xEnd - x0) / h);
+    ld y = y0;
+
+    cout << fixed << setprecision(6);
+    cout << "Step\t x\t y\n";
+
+    for (int i = 0; i <= n; i++) {
+        cout << i << "\t" << x0 << "\t" << y << "\n";
+        
+        if (i < n) {  // Only update if not at the last step
+            ld k1 = h * dydx(x0, cof);
+            ld k2 = h * dydx(x0 + h/2.0, cof);
+            ld k3 = h * dydx(x0 + h/2.0, cof);
+            ld k4 = h * dydx(x0 + h, cof);
+
+            y = y + (k1 + 2*k2 + 2*k3 + k4) / 6.0;
+            x0 += h;
+        }
+    }
+
+    return y;
+}
+
+int main() {
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    int test;
+    cin >> test;
+    for(int tt = 1; tt <= test; tt++)
+    {
+        
+        cout << "\nTest Case " << tt << "...\n\n";
+        int degree;
+        //    cout << "Enter degree of polynomial: ";
+        cin >> degree;
+        
+        vector<ld> cof(degree + 1);
+        //    cout << "Enter coefficients from highest degree to constant:\n";
+        for (int i = 0; i <= degree; i++) cin >> cof[i];
+        
+        ld x0, y0, xEnd, h;
+        //    cout << "Enter initial x0, initial y0, final x, and step h:\n";
+        cin >> x0 >> y0 >> xEnd >> h;
+        
+        ld yFinal = rungeKutta(x0, y0, xEnd, h, cof);
+        cout << "\nFinal value: y(" << xEnd << ") = " << yFinal << "\n";
+    }
+
+    return 0;
+}
 ```
 [Open RungeKutta4th.cpp](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/RungeKutta4th.cpp)
 
 #### <a name="runge-kutta-input"></a>Input
 ```
 [Add input format/example here]
+2
+3
+1 0 0 0
+0 0 2 0.5
+2
+4 -3 0
+1 1 3 0.4
 ```
 [Open input. txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/input.txt)
 
 #### <a name="runge-kutta-output"></a>Output
 ```
 [Add output format/example here]
+
+Test Case 1...
+
+Step	 x	 y
+0	0.000000	0.000000
+1	0.500000	0.125000
+2	1.000000	1.000000
+3	1.500000	3.375000
+4	2.000000	8.000000
+
+Final value: y(2.000000) = 8.000000
+
+Test Case 2...
+
+Step	 x	 y
+0	1.000000	1.000000
+1	1.400000	3.640000
+2	1.800000	7.560000
+3	2.200000	12.760000
+4	2.600000	19.240000
+5	3.000000	27.000000
+
+Final value: y(3.000000) = 27.000000
 ```
 [Open output.txt](./src/SOLUTION%20OF%20DIFFERENTIAL%20EQUATIONS/Runge%20Kutta/output.txt)
 
