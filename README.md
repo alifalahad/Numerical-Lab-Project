@@ -1454,12 +1454,21 @@ int main() {
 #### <a name="bisection-input"></a>Input
 ```
 [Add input format/example here]
+3
+1 -4 -1 4
+-2 5
 ```
 [Open input.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/input.txt)
 
 #### <a name="bisection-output"></a>Output
 ```
 [Add output format/example here]
+Bisection Method for Root Finding 
+Found 3 root(s):
+-1.000000
+1.000000
+4.000000
+
 ```
 [Open output.txt](./src/SOLUTION%20OF%20NON%20LINEAR%20EQUATIONS/BISECTION/output.txt)
 
