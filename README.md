@@ -3333,13 +3333,17 @@ I = (3h / 8) [ (y₀ + yₙ) + 3(y₁ + y₂ + y₄ + y₅ + ...) + 2(y₃ + y�
 | **Computation** | It requires slightly more arithmetic operations per interval than the 1/3 rule. |
 
 </details>
+
+
 #### <a name="simpsons-38-code"></a>Code
+
 ```cpp
-// View the code file here:
-#include<bits/stdc++.h>
+#include<bits/stdc++. h>
 using namespace std;
+
 int degree;
 vector<double> coeffs;
+
 double func(double x) {
     double result = coeffs[0];
     for (int i = 1; i <= degree; i++) {
@@ -3347,27 +3351,35 @@ double func(double x) {
     }
     return result;
 }
+
 int main() {
-    freopen("input_3_8.txt" , "r" , stdin);
-    freopen("output_3_8.txt" , "w" ,stdout);
+    freopen("input_3_8.txt", "r", stdin);
+    freopen("output_3_8.txt", "w", stdout);
+    
     cout << "Newton's 3/8 Rule for Numerical Integration" << endl;
+    
     cin >> degree;
     coeffs.resize(degree + 1);
+    
     for (int i = 0; i <= degree; i++) {
         cin >> coeffs[i];
     }
+    
     double lower, upper;
     int n;
     cin >> lower;
     cin >> upper;
     cin >> n;
+    
     if (n % 3 != 0) {
         cout << "Error: 'n' must be a multiple of 3 for Newton's 3/8 Rule." << endl;
         return 1;
     }
+    
     double h = (upper - lower) / n;
     double sum = 0.0;
     sum = func(lower) + func(upper);
+    
     for (int i = 1; i < n; i++) {
         double x = lower + i * h;
         if (i % 3 == 0) {
@@ -3378,13 +3390,15 @@ int main() {
             sum += 3 * func(x);
         }
     }
+    
     // Apply the final 3h/8 factor
     double result = (3 * h / 8) * sum;
+    
     cout << fixed << setprecision(6);
     cout << "The integral value is: " << result << endl;
+    
     return 0;
 }
-
 ```
 [Open newton3_8.cpp](./src/NUMERICAL_INTEGRATION/THREE_EIGHT_RULE/newton3_8.cpp)
 
