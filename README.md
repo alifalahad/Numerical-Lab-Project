@@ -3383,7 +3383,8 @@ int main() {
     cout << fixed << setprecision(6);
     cout << "The integral value is: " << result << endl;
     return 0;
-} 
+}
+
 ```
 [Open newton3_8.cpp](./src/NUMERICAL_INTEGRATION/THREE_EIGHT_RULE/newton3_8.cpp)
 
