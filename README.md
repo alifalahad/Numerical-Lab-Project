@@ -2241,19 +2241,81 @@ y(x) = yₙ + u(∇yₙ) + [u(u+1) / 2!] × ∇²yₙ + [u(u+1)(u+2) / 3!] × �
 
 #### <a name="backward-interpolation-code"></a>Code
 ```cpp
-// View the code file here:  
+// View the code file here:
+#include <bits/stdc++.h>
+using namespace std;
+
+// factorial function
+long long fact(int n) {
+    long long f = 1;
+    for (int i = 2; i <= n; i++) f *= i;
+    return f;
+}
+
+int main() {
+
+     freopen("input_bw.txt" , "r" , stdin);
+    freopen("output_bw.txt" , "w" ,stdout);
+    int n;
+    //cout << "Enter number of data points: ";
+    cin >> n;
+
+    vector<double> x(n), y(n);
+
+   // cout << "Enter x values (equally spaced):\n";
+    for (int i = 0; i < n; i++) cin >> x[i];
+
+    //cout << "Enter y values:\n";
+    for (int i = 0; i < n; i++) cin >> y[i];
+
+    // Creating backward difference table
+    vector<vector<double>> diff(n, vector<double>(n));
+    for (int i = 0; i < n; i++) diff[i][0] = y[i];
+
+    // Construct backward difference table
+    for (int j = 1; j < n; j++) {
+        for (int i = n - 1; i >= j; i--) {
+            diff[i][j] = diff[i][j-1] - diff[i-1][j-1];
+        }
+    }
+
+    double xp;
+    //cout << "Enter value of x to interpolate: ";
+    cin >> xp;
+
+    double h = x[1] - x[0];
+    double s = (xp - x[n-1]) / h;  
+
+    // Newton backward formula
+    double yp = y[n-1];  
+    double term = 1;
+
+    for (int j = 1; j < n; j++) {
+        term *= (s + (j - 1)); 
+        yp += (term * diff[n-1][j]) / fact(j);
+    }
+
+    cout << "Interpolated value at x = " << xp << " is: " << yp << endl;
+
+    return 0;
+}
 ```
 [Open newton_backward.cpp](./src/Newton%20interpolation/Backward/newton_backward.cpp)
 
 #### <a name="backward-interpolation-input"></a>Input
 ```
 [Add input format/example here]
+5
+1 2 3 4 5
+1 4 9 16 25
+4.5
 ```
 [Open input_bw.txt](./src/Newton%20interpolation/Backward/input_bw.txt)
 
 #### <a name="backward-interpolation-output"></a>Output
 ```
 [Add output format/example here]
+Interpolated value at x = 4.5 is: 20.25
 ```
 [Open output_bw. txt](./src/Newton%20interpolation/Backward/output_bw.txt)
 
