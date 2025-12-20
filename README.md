@@ -1014,32 +1014,90 @@ Determinant = 0 → No unique solution (infinite or none).
 #### <a name="matrix-inversion-theory"></a>Theory
 [Add theory content here]
 
-Introduction
-The Matrix Inversion method using determinants and cofactors is a classic analytical approach to solving systems of linear equations (Ax = b) or finding the inverse of a matrix.
-Theory: For a square matrix A, the inverse A⁻¹ exists if and only if the determinant of A (denoted as |A|) is non-zero. The inverse is calculated using the formula:
+<details open>
+<summary><b>Theory</b></summary>
+
+<br>
+
+> ### Introduction
+> 
+> The Matrix Inversion method using determinants and cofactors is a classic analytical approach to solving systems of linear equations **(Ax = b)** or finding the inverse of a matrix.  
+
+<br>
+
+### Theory
+
+For a square matrix **A**, the inverse **A⁻¹** exists if and only if the determinant of **A** (denoted as **|A|**) is non-zero. The inverse is calculated using the formula: 
+
+```
 A⁻¹ = (1 / |A|) × adj(A)
-Where adj(A) is the Adjoint matrix, which is the transpose of the Cofactor matrix. Once the inverse is found, the system solution is x = A⁻¹b.
-Algorithm
-The process involves four major steps:
-1.	Calculate the Determinant (|A|): Compute the determinant of the matrix.
-o	If |A| = 0, the matrix is singular (no inverse exists), and the method terminates.
-2.	Find the Cofactor Matrix: For every element A[i][j] in the matrix, calculate its cofactor C[i][j].
-o	Minor (M): The determinant of the sub-matrix left after removing row i and column j.
-o	Cofactor formula: C[i][j] = (-1)^(i+j) × M[i][j].
-3.	Find the Adjoint Matrix (adj(A)): Take the transpose of the Cofactor matrix. (Swap rows with columns: adj[i][j] = C[j][i]).
-4.	Compute Inverse and Solve:
-o	Multiply every element of the Adjoint matrix by (1 / |A|) to get A⁻¹.
-o	Finally, multiply A⁻¹ by the constant vector b to find the solution vector x.
-Advantages
-•	Theoretical Clarity: This method provides an exact, closed-form algebraic formula for the solution, which is useful for theoretical proofs and symbolic derivations.
-•	Small Systems: It is straightforward and easy to implement by hand for small matrices (e.g., 2×2 or 3×3).
-•	Element Independence: Unlike elimination methods, each element of the inverse can be calculated independently if needed.
-Disadvantages
-•	Computational Complexity: This is one of the most computationally expensive methods for large matrices. Calculating determinants and cofactors for an n × n matrix has a factorial time complexity (O(n!)) if done recursively, making it impractical for n > 4.
-•	Memory Intensive: It requires storing the cofactor matrix and the adjoint matrix.
-•	Rounding Errors: For floating-point numbers, the calculation of determinants can become numerically unstable, leading to significant errors in the final result.
+```
 
+Where **adj(A)** is the **Adjoint matrix**, which is the transpose of the **Cofactor matrix**. Once the inverse is found, the system solution is **x = A⁻¹b**.
 
+<br>
+
+### Algorithm
+
+The process involves four major steps:  
+
+<br>
+
+#### **Step 1: Calculate the Determinant (|A|)**
+
+Compute the determinant of the matrix.   
+
+- If **|A| = 0**, the matrix is singular (no inverse exists), and the method terminates. 
+
+<br>
+
+#### **Step 2: Find the Cofactor Matrix**
+
+For every element **A[i][j]** in the matrix, calculate its cofactor **C[i][j]**.
+
+- **Minor (M):** The determinant of the sub-matrix left after removing row **i** and column **j**. 
+- **Cofactor formula:** `C[i][j] = (-1)^(i+j) × M[i][j]`
+
+<br>
+
+#### **Step 3: Find the Adjoint Matrix (adj(A))**
+
+Take the transpose of the Cofactor matrix.  
+
+- Swap rows with columns: **adj[i][j] = C[j][i]**
+
+<br>
+
+#### **Step 4: Compute Inverse and Solve**
+
+- Multiply every element of the Adjoint matrix by **(1 / |A|)** to get **A⁻¹**.
+- Finally, multiply **A⁻¹** by the constant vector **b** to find the solution vector **x**. 
+
+<br>
+
+---
+
+### Advantages
+
+| Aspect | Benefit |
+|--------|---------|
+| **Theoretical Clarity** | This method provides an exact, closed-form algebraic formula for the solution, which is useful for theoretical proofs and symbolic derivations. |
+| **Small Systems** | It is straightforward and easy to implement by hand for small matrices (e.g., 2×2 or 3×3). |
+| **Element Independence** | Unlike elimination methods, each element of the inverse can be calculated independently if needed. |
+
+<br>
+
+---
+
+### Disadvantages
+
+| Limitation | Impact |
+|------------|--------|
+| **Computational Complexity** | This is one of the most computationally expensive methods for large matrices.  Calculating determinants and cofactors for an n × n matrix has a factorial time complexity (O(n!)) if done recursively, making it impractical for n > 4. |
+| **Memory Intensive** | It requires storing the cofactor matrix and the adjoint matrix. |
+| **Rounding Errors** | For floating-point numbers, the calculation of determinants can become numerically unstable, leading to significant errors in the final result. |
+
+</details>
 
 #### <a name="matrix-inversion-code"></a>Code
 ```cpp
@@ -1215,37 +1273,98 @@ Matrix is singular so No inverse exists.
 
 #### <a name="bisection-theory"></a>Theory
 
-**Overview**
+<details open>
+<summary><b>Theory</b></summary>
 
-The Bisection Method is a reliable numerical technique for finding roots of continuous functions. It operates on the principle of the Intermediate Value Theorem:  if a continuous function f(x) changes sign over an interval [a, b], then there exists at least one root within that interval.
+<br>
 
-**Mathematical Foundation**
+> ### Introduction
+> 
+> The Bisection Method is a reliable numerical technique for finding roots of continuous functions. It operates on the principle of the Intermediate Value Theorem:  if a continuous function f(x) changes sign over an interval [a, b], then there exists at least one root within that interval.  
 
-For a root to exist in interval [a, b]: 
-- f(a) × f(b) < 0 (opposite signs)
+<br>
 
-**Algorithm Steps**
+### Theory
 
-1. **Initialization**: Select interval [a, b] where f(a) × f(b) < 0
-2. **Midpoint Calculation**: Compute c = (a + b) / 2
-3. **Function Evaluation**: Calculate f(c)
-4. **Interval Update**:
-   - If f(a) × f(c) < 0 → New interval:  [a, c] (set b = c)
-   - If f(c) × f(b) < 0 → New interval:  [c, b] (set a = c)
-5. **Convergence Check**:  Repeat until |b - a| < tolerance
-6. **Result**: Final midpoint c approximates the root
+For a root to exist in interval **[a, b]**: 
 
-**Key Characteristics**
+```
+f(a) × f(b) < 0  (opposite signs)
+```
 
-✅ **Advantages:**
-- Guaranteed convergence for continuous functions
-- Simple implementation
-- Reliable and robust
+<br>
 
-❌ **Limitations:**
-- Slow convergence (linear rate)
-- Requires initial interval with sign change
-- Inefficient for multiple or complex roots
+### Algorithm
+
+The Bisection Method follows this iterative process:  
+
+<br>
+
+#### **Step 1: Initialization**
+
+Select interval **[a, b]** where **f(a) × f(b) < 0**.
+
+<br>
+
+#### **Step 2: Midpoint Calculation**
+
+Compute the midpoint: 
+
+```
+c = (a + b) / 2
+```
+
+<br>
+
+#### **Step 3: Function Evaluation**
+
+Calculate **f(c)**.
+
+<br>
+
+#### **Step 4: Interval Update**
+
+- If **f(a) × f(c) < 0** → New interval: **[a, c]** (set **b = c**)
+- If **f(c) × f(b) < 0** → New interval:  **[c, b]** (set **a = c**)
+
+<br>
+
+#### **Step 5: Convergence Check**
+
+Repeat until **|b - a| < tolerance**. 
+
+<br>
+
+#### **Step 6: Result**
+
+Final midpoint **c** approximates the root.
+
+<br>
+
+---
+
+### Advantages
+
+| Aspect | Benefit |
+|--------|---------|
+| **Guaranteed Convergence** | Ensures convergence for continuous functions with sign change. |
+| **Simple Implementation** | Straightforward algorithm with minimal computational requirements. |
+| **Reliable and Robust** | Works consistently regardless of function complexity. |
+
+<br>
+
+---
+
+### Disadvantages
+
+| Limitation | Impact |
+|------------|--------|
+| **Slow Convergence** | Linear convergence rate makes it slower than methods like Newton-Raphson. |
+| **Requires Initial Interval** | Must find an interval where the function changes sign. |
+| **Inefficient for Multiple Roots** | Not well-suited for handling multiple or complex roots efficiently. |
+
+</details>
+
 
 #### <a name="bisection-code"></a>Code
 ```cpp
@@ -1271,51 +1390,109 @@ For a root to exist in interval [a, b]:
 
 #### <a name="false-position-theory"></a>Theory
 
-**Overview**
+<details open>
+<summary><b>Theory</b></summary>
 
-The False Position Method (Regula Falsi) is an enhanced bracketing technique that combines bisection with linear interpolation. It typically converges faster than bisection by using a weighted average based on function values.
+<br>
 
-**Mathematical Formula**
+> ### Introduction
+> 
+> The False Position Method (Regula Falsi) is an enhanced bracketing technique that combines bisection with linear interpolation.  It typically converges faster than bisection by using a weighted average based on function values.  
 
-Root approximation: 
+<br>
+
+### Theory
+
+**Root approximation formula:**
+
 ```
 c = [a × f(b) - b × f(a)] / [f(b) - f(a)]
 ```
 
 Where:
-- [a, b] is the bracketing interval
-- f(a) · f(b) < 0
+- **[a, b]** is the bracketing interval
+- **f(a) · f(b) < 0**
 
-**Algorithm**
+<br>
 
-1. **Input**: Degree, coefficients, initial guesses a and b, tolerance E
-2. **Validation**:  Verify f(a) · f(b) < 0
-3. **Compute**: c using linear interpolation formula
-4. **Update Interval**:
-   - If f(a) · f(c) < 0 → set b = c
-   - Otherwise → set a = c
-5. **Iterate**: Repeat until |f(c)| ≤ E
-6. **Output**: Root value and iteration count
+### Algorithm
 
-**Implementation Features**
+The False Position Method follows this iterative process:   
+
+<br>
+
+#### **Step 1: Input**
+
+Degree, coefficients, initial guesses **a** and **b**, tolerance **E**. 
+
+<br>
+
+#### **Step 2: Validation**
+
+Verify **f(a) · f(b) < 0**.
+
+<br>
+
+#### **Step 3: Compute**
+
+Calculate **c** using linear interpolation formula. 
+
+<br>
+
+#### **Step 4: Update Interval**
+
+- If **f(a) · f(c) < 0** → set **b = c**
+- Otherwise → set **a = c**
+
+<br>
+
+#### **Step 5: Iterate**
+
+Repeat until **|f(c)| ≤ E**. 
+
+<br>
+
+#### **Step 6: Output**
+
+Root value and iteration count.
+
+<br>
+
+---
+
+### Implementation Features
 
 - Uses `long double` for enhanced precision
 - File-based I/O (input. txt, output.txt)
-- Displays iteration table with a, b, c, and f(c) values
+- Displays iteration table with **a**, **b**, **c**, and **f(c)** values
 - Polynomial evaluation via coefficient vector
 
-**Key Characteristics**
+<br>
 
-✅ **Advantages:**
-- Faster than bisection method
-- Guaranteed convergence with valid bracket
-- Good accuracy for polynomial equations
+---
 
-❌ **Limitations:**
-- Can be slow when one endpoint is fixed
-- Requires sign change in initial interval
-- Not ideal for multiple roots
+### Advantages
 
+| Aspect | Benefit |
+|--------|---------|
+| **Faster than Bisection** | Converges more quickly by using linear interpolation instead of simple midpoint. |
+| **Guaranteed Convergence** | Ensures convergence with a valid bracketing interval. |
+| **Good Accuracy** | Provides reliable results for polynomial equations. |
+
+<br>
+
+---
+
+### Disadvantages
+
+| Limitation | Impact |
+|------------|--------|
+| **Slow Convergence (Edge Cases)** | Can be slow when one endpoint remains fixed for many iterations. |
+| **Requires Sign Change** | Must find an initial interval where the function changes sign. |
+| **Not Ideal for Multiple Roots** | Performance degrades when dealing with multiple or closely-spaced roots. |
+
+</details>
+-
 #### <a name="false-position-code"></a>Code
 ```cpp
 // View the code file here:
@@ -1428,50 +1605,111 @@ Total iterations: 4
 
 #### <a name="newton-raphson-theory"></a>Theory
 
-**Overview**
+<details open>
+<summary><b>Theory</b></summary>
 
-The Newton-Raphson Method is one of the most powerful and widely-used iterative techniques for solving nonlinear equations f(x) = 0. It leverages the tangent line at an initial guess to rapidly approximate the actual root, offering quadratic convergence under suitable conditions.
+<br>
 
-**Mathematical Principle**
+> ### Introduction
+> 
+> The Newton-Raphson Method is one of the most powerful and widely-used iterative techniques for solving nonlinear equations f(x) = 0. It leverages the tangent line at an initial guess to rapidly approximate the actual root, offering quadratic convergence under suitable conditions.  
 
-The method uses linear approximation via the derivative: 
+<br>
+
+### Theory
+
+The method uses linear approximation via the derivative:   
 
 ```
 x_(n+1) = x_n - f(x_n) / f'(x_n)
 ```
 
 Where:
-- x_n is the current approximation
-- f(x_n) is the function value
-- f'(x_n) is the derivative at x_n
+- **x_n** is the current approximation
+- **f(x_n)** is the function value
+- **f'(x_n)** is the derivative at x_n
 
-**Algorithm**
+<br>
 
-1. **Initialize**: Choose x₀ near the expected root
-2. **Compute**:  Evaluate f(x₀) and f'(x₀)
-3. **Update**: Calculate x₁ = x₀ - [f(x₀) / f'(x₀)]
-4. **Check Convergence**: If |x₁ - x₀| < ε, stop
-5. **Iterate**: Set x₀ = x₁ and repeat steps 2-4
-6. **Result**: Final x_n is the approximate root
+### Algorithm
 
-**Convergence Behavior**
+The Newton-Raphson Method follows this iterative process:   
+
+<br>
+
+#### **Step 1: Initialize**
+
+Choose **x₀** near the expected root. 
+
+<br>
+
+#### **Step 2: Compute**
+
+Evaluate **f(x₀)** and **f'(x₀)**.
+
+<br>
+
+#### **Step 3: Update**
+
+Calculate the next approximation:  
+
+```
+x₁ = x₀ - [f(x₀) / f'(x₀)]
+```
+
+<br>
+
+#### **Step 4: Check Convergence**
+
+If **|x₁ - x₀| < ε**, stop. 
+
+<br>
+
+#### **Step 5: Iterate**
+
+Set **x₀ = x₁** and repeat steps 2-4. 
+
+<br>
+
+#### **Step 6: Result**
+
+Final **x_n** is the approximate root.
+
+<br>
+
+---
+
+### Convergence Behavior
 
 - **Quadratic convergence** near the root (very fast)
 - Requires good initial guess
 - Derivative must be non-zero
 
-**Key Characteristics**
+<br>
 
-✅ **Advantages:**
-- Extremely fast convergence (quadratic)
-- Efficient for well-behaved functions
-- Fewer iterations than bracketing methods
+---
 
-❌ **Limitations:**
-- Requires derivative calculation
-- May diverge with poor initial guess
-- Fails when f'(x) = 0
+### Advantages
 
+| Aspect | Benefit |
+|--------|---------|
+| **Extremely Fast Convergence** | Quadratic convergence rate makes it one of the fastest methods available. |
+| **Efficient for Well-Behaved Functions** | Performs exceptionally well when the function is smooth and the initial guess is close to the root. |
+| **Fewer Iterations** | Typically requires significantly fewer iterations than bracketing methods. |
+
+<br>
+
+---
+
+### Disadvantages
+
+| Limitation | Impact |
+|------------|--------|
+| **Requires Derivative Calculation** | Must compute or approximate f'(x), which can be difficult or computationally expensive. |
+| **May Diverge** | Poor initial guess can cause divergence or oscillation away from the root. |
+| **Fails at Critical Points** | Method breaks down when f'(x) = 0 (horizontal tangent). |
+
+</details>
 #### <a name="newton-raphson-code"></a>Code
 ```cpp
 // View the code file here:
@@ -1597,26 +1835,32 @@ Iterations = 5
 
 > ### Introduction
 > 
-> The Secant method is an iterative numerical technique used to find the roots of a function f(x) = 0. It is an open method that uses a secant line connecting two points on the curve to approximate the root. 
+> The Secant method is an iterative numerical technique used to find the roots of a function f(x) = 0. It is an open method that uses a secant line connecting two points on the curve to approximate the root.   
 
-Unlike the **Newton-Raphson method**, the Secant method does not require the calculation of the derivative **f'(x)**. Instead, it approximates the derivative using finite differences based on two previous points **(xₙ₋₁ and xₙ)**. This makes it particularly useful when differentiating the function is difficult or computationally expensive. The method requires two initial guesses but does not require the root to be bracketed. 
+<br>
+
+### Theory
+
+Unlike the **Newton-Raphson method**, the Secant method does not require the calculation of the derivative **f'(x)**. Instead, it approximates the derivative using finite differences based on two previous points **(xₙ₋₁ and xₙ)**. This makes it particularly useful when differentiating the function is difficult or computationally expensive. The method requires two initial guesses but does not require the root to be bracketed.  
 
 <br>
 
 ### Algorithm
 
-<br>
-
-**Step 1: Initialize**
-
-- Choose two initial guesses, **x₀** and **x₁**. 
-- Set a tolerance error **E** and a maximum number of iterations. 
+The Secant method follows this iterative process:   
 
 <br>
 
-**Step 2: Iteration Step**
+#### **Step 1: Initialize**
 
-For each iteration, calculate the next approximation **xₙ₊₁** using the formula: 
+- Choose two initial guesses, **x₀** and **x₁**.   
+- Set a tolerance error **E** and a maximum number of iterations.   
+
+<br>
+
+#### **Step 2: Iteration Step**
+
+For each iteration, calculate the next approximation **xₙ₊₁** using the formula:   
 
 ```
 x_(n+1) = x_n - f(x_n) * [ (x_n - x_(n-1)) / (f(x_n) - f(x_(n-1))) ]
@@ -1624,38 +1868,42 @@ x_(n+1) = x_n - f(x_n) * [ (x_n - x_(n-1)) / (f(x_n) - f(x_(n-1))) ]
 
 <br>
 
-**Step 3: Check Convergence**
+#### **Step 3: Check Convergence**
 
-- Calculate the absolute error: **|xₙ₊₁ – xₙ|**. 
-- If the error is **≤ E**, the root is found.
+- Calculate the absolute error: **|xₙ₊₁ – xₙ|**.   
+- If the error is **≤ E**, the root is found.  
 
 <br>
 
-**Step 4: Update**
+#### **Step 4: Update**
 
 - Set **xₙ₋₁ = xₙ**
 - Set **xₙ = xₙ₊₁**
-- Repeat Step 2 until convergence or maximum iterations are reached. 
+- Repeat Step 2 until convergence or maximum iterations are reached.  
 
 <br>
+
+---
 
 ### Advantages
 
-- **No Derivative Needed:** Unlike Newton-Raphson, it does not require analytical differentiation, making it suitable for complex functions. 
-
-- **Faster than Bisection:** It has a superlinear convergence rate (approx. 1.618), which is significantly faster than the linear convergence of the Bisection method.
-
-- **Efficiency:** After the first step, it requires only one function evaluation per iteration (reusing the previous value).
+| Aspect | Benefit |
+|--------|---------|
+| **No Derivative Needed** | Unlike Newton-Raphson, it does not require analytical differentiation, making it suitable for complex functions.   |
+| **Faster than Bisection** | It has a superlinear convergence rate (approx. 1.618), which is significantly faster than the linear convergence of the Bisection method.  |
+| **Efficiency** | After the first step, it requires only one function evaluation per iteration (reusing the previous value). |
 
 <br>
 
+---
+
 ### Disadvantages
 
-- **No Guaranteed Convergence:** Unlike the Bisection method, the Secant method may diverge if the initial guesses are not close enough to the root.
-
-- **Slower than Newton-Raphson:** Its convergence rate is slightly slower than Newton's method (which is quadratic, 2.0).
-
-- **Numerical Instability:** If f(xₙ) and f(xₙ₋₁) are nearly equal, the denominator approaches zero, potentially causing large errors or division by zero. 
+| Limitation | Impact |
+|------------|--------|
+| **No Guaranteed Convergence** | Unlike the Bisection method, the Secant method may diverge if the initial guesses are not close enough to the root.  |
+| **Slower than Newton-Raphson** | Its convergence rate is slightly slower than Newton's method (which is quadratic, 2.0). |
+| **Numerical Instability** | If f(xₙ) and f(xₙ₋₁) are nearly equal, the denominator approaches zero, potentially causing large errors or division by zero.  |
 
 </details>
 
@@ -1753,32 +2001,34 @@ int main() {
 
 > ### Introduction
 > 
-> Newton's Forward Difference Interpolation is a numerical method used to approximate the value of a function at a point within the range of a given dataset. 
+> Newton's Forward Difference Interpolation is a numerical method used to approximate the value of a function at a point within the range of a given dataset.   
 
 <br>
 
 ### Theory
 
-This method is specifically designed for datasets where the input values **(x)** are **equally spaced** (i.e., the step size **h** is constant). It utilizes **forward differences** (denoted by **Δ**) and is most accurate when the point to be interpolated lies near the **beginning (top)** of the data table. 
+This method is specifically designed for datasets where the input values **(x)** are **equally spaced** (i.e., the step size **h** is constant). It utilizes **forward differences** (denoted by **Δ**) and is most accurate when the point to be interpolated lies near the **beginning (top)** of the data table.   
 
 <br>
 
 ### Algorithm
 
+The Newton's Forward Difference Interpolation follows this process:   
+
 <br>
 
-**Step 1: Construct the Forward Difference Table**
+#### **Step 1: Construct the Forward Difference Table**
 
-Calculate the first differences **(Δy)**, second differences **(Δ²y)**, and so on, until the differences become constant or zero. 
+Calculate the first differences **(Δy)**, second differences **(Δ²y)**, and so on, until the differences become constant or zero.   
 
 - **Δy₀ = y₁ – y₀**
 - **Δ²y₀ = Δy₁ – Δy₀**
 
 <br>
 
-**Step 2: Calculate u**
+#### **Step 2: Calculate u**
 
-Determine the normalized variable **u** using the formula: 
+Determine the normalized variable **u** using the formula:   
 
 ```
 u = (x – x₀) / h
@@ -1791,29 +2041,35 @@ Where:
 
 <br>
 
-**Step 3: Apply Formula**
+#### **Step 3: Apply Formula**
 
 Use the formula to find **y(x)**:
 
 ```
-y(x) = y₀ + u(Δy₀) + [u(u-1) / 2!] × Δ²y₀ + [u(u-1)(u-2) / 3!] × Δ³y₀ + ... 
+y(x) = y₀ + u(Δy₀) + [u(u-1) / 2!] × Δ²y₀ + [u(u-1)(u-2) / 3!] × Δ³y₀ + ...  
 ```
 
 <br>
 
+---
+
 ### Advantages
 
-- **Simplicity:** The formula is straightforward and easy to compute for equally spaced data. 
-
-- **Accuracy at Start:** It provides high accuracy for values close to the starting value **(x₀)**.
+| Aspect | Benefit |
+|--------|---------|
+| **Simplicity** | The formula is straightforward and easy to compute for equally spaced data.   |
+| **Accuracy at Start** | It provides high accuracy for values close to the starting value (x₀). |
 
 <br>
 
+---
+
 ### Disadvantages
 
-- **Restriction:** It is strictly valid only for equally spaced intervals. 
-
-- **Location Specific:** It becomes less accurate as the point moves towards the end of the table (where Backward Interpolation is preferred).
+| Limitation | Impact |
+|------------|--------|
+| **Restriction** | It is strictly valid only for equally spaced intervals.  |
+| **Location Specific** | It becomes less accurate as the point moves towards the end of the table (where Backward Interpolation is preferred). |
 
 </details>
 
@@ -1911,31 +2167,33 @@ Interpolated value at x = 1.5 is: 2.25
 
 > ### Introduction
 > 
-> Newton's Backward Difference Interpolation is the counterpart to the Forward method, used for approximating values near the end of a dataset.  
+> Newton's Backward Difference Interpolation is the counterpart to the Forward method, used for approximating values near the end of a dataset.   
 
 <br>
 
 ### Theory
 
-Like the Forward method, this requires **equally spaced intervals**. However, it uses **backward differences** (denoted by **∇**) and references values starting from the last point **(xₙ)** and moving backward. It is best used when the value to be interpolated lies near the **end (bottom)** of the table.  
+Like the Forward method, this requires **equally spaced intervals**. However, it uses **backward differences** (denoted by **∇**) and references values starting from the last point **(xₙ)** and moving backward. It is best used when the value to be interpolated lies near the **end (bottom)** of the table.   
 
 <br>
 
 ### Algorithm
 
+The Newton's Backward Difference Interpolation follows this process:   
+
 <br>
 
-**Step 1: Construct the Backward Difference Table**
+#### **Step 1: Construct the Backward Difference Table**
 
-Calculate differences similar to the forward method but indexed from the end.  
+Calculate differences similar to the forward method but indexed from the end.   
 
 - **∇yₙ = yₙ – yₙ₋₁**
 
 <br>
 
-**Step 2: Calculate u**
+#### **Step 2: Calculate u**
 
-Determine the normalized variable **u** using the formula:  
+Determine the normalized variable **u** using the formula:   
 
 ```
 u = (x – xₙ) / h
@@ -1945,31 +2203,39 @@ Where **xₙ** is the last value in the dataset.
 
 <br>
 
-**Step 3: Apply Formula**
+#### **Step 3: Apply Formula**
 
 Use the formula to find **y(x)**:
 
 ```
-y(x) = yₙ + u(∇yₙ) + [u(u+1) / 2!] × ∇²yₙ + [u(u+1)(u+2) / 3!] × ∇³yₙ + ... 
+y(x) = yₙ + u(∇yₙ) + [u(u+1) / 2!] × ∇²yₙ + [u(u+1)(u+2) / 3!] × ∇³yₙ + ...  
 ```
 
 *Note the use of u+1 instead of u-1.*
 
 <br>
 
+---
+
 ### Advantages
 
-- **End-of-Data Accuracy:** It is the most accurate method for estimating values near the end of the dataset.  
-
-- **Complementary:** Works perfectly in conjunction with the Forward method to cover the whole range. 
+| Aspect | Benefit |
+|--------|---------|
+| **End-of-Data Accuracy** | It is the most accurate method for estimating values near the end of the dataset.   |
+| **Complementary** | Works perfectly in conjunction with the Forward method to cover the whole range.   |
 
 <br>
 
+---
+
 ### Disadvantages
 
-- **Restriction:** Requires equal spacing of x values.  
+| Limitation | Impact |
+|------------|--------|
+| **Restriction** | Requires equal spacing of x values.    |
+| **Not for Middle** | Less accurate for points located in the exact center of the table (Stirling's or Bessel's formulas are better there). |
 
-- **Not for Middle:** Less accurate for points located in the exact center of the table (Stirling's or Bessel's formulas are better there).
+</details>
 
 </details>
 
@@ -2004,25 +2270,25 @@ y(x) = yₙ + u(∇yₙ) + [u(u+1) / 2!] × ∇²yₙ + [u(u+1)(u+2) / 3!] × �
 
 > ### Introduction
 > 
-> Newton's Divided Difference Interpolation is a versatile general formula used for interpolation when the interval step sizes are unequal. 
+> Newton's Divided Difference Interpolation is a versatile general formula used for interpolation when the interval step sizes are unequal.    
 
 <br>
 
 ### Theory
 
-Unlike the Forward/Backward methods, this does not assume the input values **(x)** are equally spaced. It uses **divided differences**, which are differences in function values divided by the differences in their corresponding x values. The resulting polynomial is constructed progressively, meaning new data points can be added without recalculating the entire set. 
+Unlike the Forward/Backward methods, this does not assume the input values **(x)** are equally spaced. It uses **divided differences**, which are differences in function values divided by the differences in their corresponding x values. The resulting polynomial is constructed progressively, meaning new data points can be added without recalculating the entire set.    
 
 <br>
 
 ### Algorithm
 
-The method follows a systematic approach to construct an interpolating polynomial: 
+The method follows a systematic approach to construct an interpolating polynomial:    
 
 <br>
 
-**Step 1: Calculate Divided Differences**
+#### **Step 1: Calculate Divided Differences**
 
-Compute the first, second, and higher-order divided differences. 
+Compute the first, second, and higher-order divided differences.    
 
 **First Order:**
 ```
@@ -2036,9 +2302,9 @@ f[x₀, x₁, x₂] = (f[x₁, x₂] – f[x₀, x₁]) / (x₂ – x₀)
 
 <br>
 
-**Step 2: Apply Formula**
+#### **Step 2: Apply Formula**
 
-Construct the interpolating polynomial:
+Construct the interpolating polynomial: 
 
 ```
 f(x) = f(x₀) + (x – x₀) f[x₀, x₁] + (x – x₀)(x – x₁) f[x₀, x₁, x₂] + ...
@@ -2050,14 +2316,11 @@ f(x) = f(x₀) + (x – x₀) f[x₀, x₁] + (x – x₀)(x – x₁) f[x₀, x
 
 ### Advantages
 
-**Unequal Intervals**  
-It works for both equally and unequally spaced data, making it universally applicable.
-
-**Flexibility**  
-Adding a new data point only adds one new term to the polynomial; it does not require recalculating previous coefficients (unlike Lagrange Interpolation).
-
-**Polynomial Degree**  
-The degree of the polynomial is evident immediately from the number of terms. 
+| Aspect | Benefit |
+|--------|---------|
+| **Unequal Intervals** | It works for both equally and unequally spaced data, making it universally applicable. |
+| **Flexibility** | Adding a new data point only adds one new term to the polynomial; it does not require recalculating previous coefficients (unlike Lagrange Interpolation). |
+| **Polynomial Degree** | The degree of the polynomial is evident immediately from the number of terms.    |
 
 <br>
 
@@ -2065,11 +2328,12 @@ The degree of the polynomial is evident immediately from the number of terms.
 
 ### Disadvantages
 
-**Calculation Complexity**  
-The manual construction of the divided difference table is more arithmetic-heavy than simple difference tables.
+| Limitation | Impact |
+|------------|--------|
+| **Calculation Complexity** | The manual construction of the divided difference table is more arithmetic-heavy than simple difference tables. |
+| **Sensitivity** | Like all polynomial interpolation, it can be sensitive to errors in data points (oscillations). |
 
-**Sensitivity**  
-Like all polynomial interpolation, it can be sensitive to errors in data points (oscillations).
+</details>
 
 </details>
 
