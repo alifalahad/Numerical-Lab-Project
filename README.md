@@ -11,6 +11,8 @@
 ---
 
 # Table of Contents
+<img width="1347" height="782" alt="image" src="https://github.com/user-attachments/assets/45ad1e0e-ae3a-4779-87f8-93d1da7aa9de" />
+
 
 - [Solution of Linear Equations](#solution-of-linear-equations)
   - [Gauss Elimination Method](#gauss-elimination-method)
